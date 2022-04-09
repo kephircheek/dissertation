@@ -1,0 +1,132 @@
+\documentclass[14pt]{extreport}
+\usepackage{cmap} % copy from pdf
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8x]{inputenc} 
+\usepackage[english,russian]{babel} 
+\usepackage{
+  amssymb,
+  amsfonts,
+  amsmath,
+  mathtext,
+  cite,
+  enumerate,
+  float,
+  amsthm} 
+\usepackage{hyperref} % for url in bibtex
+
+% \renewcommand\qedsymbol{${\mathlarger \blacktriangleright }$}
+% \renewcommand\qedsymbol{\textbf{QED}}
+ 
+\newtheorem{definition}{Определение}[section] 
+\newcommand{\bra}[1]{\left\langle #1 \right|}
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+ 
+\usepackage{ragged2e} 
+\usepackage{verbatim} % enviroment without latex
+\usepackage{relsize} % {\mathlarger mathform}
+
+% PAPER PARAMETERS
+\usepackage{geometry} 
+ \geometry{left=25mm} 
+ \geometry{right=10mm} 
+ \geometry{top=20mm} 
+ \geometry{bottom=20mm} 
+
+% containers for figure with [ht]
+% \usepackage{float}
+% pic
+\usepackage[pdftex]{graphicx, xcolor} 
+% filepath for pic
+\graphicspath{{./pic}} 
+% for subfigure
+\usepackage{subcaption}
+
+\usepackage{lineno}
+\linenumbers
+
+\title{МНОГОЧАСТИЧНАЯ ЗАПУТАННОСТЬ В МНОГОКВАНТОВОЙ СПЕКТРОСКОПИИ ЯМР В ТВЕРДОМ ТЕЛЕ}
+\author{Илья Лазарев}
+\date{Последняя редакция: \today}
+
+\begin{document}
+\maketitle
+\begin{titlepage}
+\begin{flushright}
+   Приложение № 5 \\
+   к Положению о диссертационном \\
+   совете Московского государственного \\
+   университета имени М.В.Ломоносова
+\end{flushright}
+\vspace{1cm}
+\begin{center}
+  {\large Московский государственный университет им. М.В. Ломоносова} \\
+  {\it Факультет фундаментальной физико-химической инженерии} \\
+  \vspace{1cm} 
+  {\large Институт проблем химической физики РАН} \\
+  {\it Лаборатория спиновой динамики и спинового компьютинга} \\
+  \vfill
+  (на правах рукописи) \\ 
+  \vfill
+  {\Large \bf Лазарев Илья Дмитриевич} \\
+  \vspace{1cm}
+  {\Large \bf 
+      Многочастичная запутанность \\
+      в многоквантовой спектроскопии ЯМР \\
+      \vspace{2mm}
+      в твердом теле
+  }
+ \vfill
+ 01.04.07 Физика конденсированного состояния \\
+ \vspace{1cm}
+ ДИССЕРТАЦИЯ \\
+ на соискание ученой степени \\
+ кандидата физико-математических наук
+ \vfill
+ {\large
+   Научный руководитель:\\
+   д.ф.-м.н. профессор Фельдман Эдуард Беньямиович
+ }
+ \vfill
+ Москва, 2022 г.
+\end{center}
+\end{titlepage}
+
+\addtocounter{page}{1}
+
+
+\tableofcontents
+
+%\raggedright  %отмена переносов
+%\justify %выравнивание по ширине
+
+\chapter*{Введение}
+\addcontentsline{toc}{chapter}{Введение}  
+  \input{introduction}
+
+\chapter{Исследование квантовых корреляций методами ЯМР}
+  \input{literature-review/entanglement}
+  \input{literature-review/skew-wigner-yanase-information}
+  \input{literature-review/quantum-fisher-information}
+  \input{literature-review/methods}
+  \input{literature-review/mq-nmr}
+  \input{literature-review/spin-models}
+
+
+\chapter{Измерение информации Фишера в МК эксперименте ЯМР}
+\input{fisher-information-mesuarment-in-mq-nmr}
+
+\chapter{Многоспиновая запутанность в системе эквивалентных спинов}
+\input{many-particle-entanglement-in-nanopore}
+
+\chapter{Многоспиновая запутанность в зигзагообразной цепочке}
+\input{many-particle-entanglement-in-zigzag-chain}
+
+\chapter{Измерение информации Вигнера-Янасе в МК эксперименте ЯМР}
+\label{chapter:wyi-mesuarement}
+\input{wigner-yanase-information-mesuarment-in-mq-nmr}
+
+\chapter*{Заключение}
+\addcontentsline{toc}{chapter}{Заключение}  
+
+\input{bibliography}
+\end{document}

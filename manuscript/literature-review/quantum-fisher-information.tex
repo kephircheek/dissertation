@@ -1,0 +1,344 @@
+\section{Информация Фишера}
+% история
+% oпределение
+% применение
+% вывод
+% свойства
+% формула
+% связь со вторым моментом
+
+% PETZ2011 https://doi.org/10.1142/9789814338745_0015
+Оценка параметров вероятностных распределений является одной из самых основных задач в теории информации 
+и она была обобщена на квантовый режим\cite{Helstrom1976, Holevo1982}, поскольку описание квантового измерения является по сути вероятностным. 
+
+\subsection{Классическая информация Фишера}
+Классическая информация Фишера является мерой того, 
+как быстро изменяется распределение информации при изменении некоторого параметра.
+
+\begin{definition}\label{def:fisher-information}
+ Информация Фишера --- это математическое ожидание квадрата относительной скорости изменения условной плотности вероятности.
+\end{definition}
+%
+\begin{equation}\label{eq:fisher-information}
+  F_c({\theta})= 
+      \sum_x{{P}(x,\theta)}
+          \left[\frac{1}{P(x,\theta)}
+     \frac{d}{d\theta}
+  {P(x,\theta)}\right]^2
+\end{equation}
+%
+Важно отметить, 
+что квадрат играет ключевую роль в определении информации Фишера 
+и отказаться от него невозможно: 
+%
+\begin{equation}
+    \label{eq:2}
+        \sum_x{{P}(x,\theta)}
+            \frac{1}{P(x,\theta)}
+                \frac{dP(x,\theta)}{d\theta} =
+                    \sum_x\frac{{dP}(x,\theta)}{d\theta} = 
+                \frac{d}{d\theta}\sum_x{{P}(x,\theta)} =
+            \frac{d}{d\theta}1 = 
+            0
+\end{equation}
+
+Выражение~(\ref{eq:fisher-information}) для классической информации фишера, можно переписать через математическое ожидание: 
+\begin{multline}
+    \label{eq:17}
+        F_c(\theta) =
+            \sum_x P(x, \theta)\left[\frac{1}{P(x,\theta)}\frac{d}{d_\theta} P(x, \theta)\right]^2 \\
+                = \sum_x P(x,\theta)\left[\frac{d}{d_\theta} 
+                    \ln P(x,\theta \right]^2 \\ 
+                    \Rightarrow E
+                \left[\left(\frac{d}{d_\theta}\ln f(X,\theta)\right)^2
+            \right]
+\end{multline}
+%
+В случае, если $f(X,\theta)$ дважды дифференцируема по $\theta$, 
+выражение~(\ref{eq:17}), можно упростить и записать в виде 
+%
+\begin{equation}\label{eq:18}
+  F_c(\theta) = -E \left[\frac{\partial^2}{\partial \theta^2} \ln f(X,\theta)\right].
+\end{equation}
+%
+Для доказательства выражения~(\ref{eq:18}), 
+продифференцируем выражение под оператором математического ожидания: 
+%
+\begin{multline}
+    \label{eq:19}
+        \frac{\partial^2}{\partial \theta^2}\ln f(X,\theta) = 
+            \frac{\partial}{\partial \theta}\left(\frac{1}{f(X,\theta)} 
+                \frac{\partial f(X,\theta)}{\partial \theta} \right) \\
+            = \frac{1}{f(X,\theta)}\frac{\partial^2 f(X,\theta)}{\partial \theta^2} -
+        \left(\frac{1}{f(X,\theta)} \frac{\partial f(X,\theta)}{\partial \theta} 
+    \right)^2
+\end{multline}
+%
+Покажем, 
+что математическое ожидание первого слагаемого выражения~(\ref{eq:19}) тождественно равно нулю:
+%
+\begin{multline}
+    \label{eq:20}
+        E\left[\frac{1}{f(X,\theta)} 
+            \frac{\partial^2 f(X,\theta)}{\partial \theta^2}\right] = 
+                \int f (X,\theta) \frac{1}{f(X,\theta)} 
+                    \frac{\partial^2 f(X, \theta)}{\partial \theta^2}dx \\
+                        = \int \frac{\partial^2 f(X,\theta)}{\partial \theta^2}dx =
+                    \frac{\partial^2}{\partial \theta^2} \int f(X,\theta)dx 
+                = \frac{\partial^2}{\partial \theta^2}1 \equiv 0
+\end{multline}
+%
+Отсюда следует~(\ref{eq:18}). 
+Приведенное доказательство справедливо при условии регулярности $f(X,\theta)$.
+
+
+%  (Cramer-Rao bound)
+Информация Фишера играет важную роль в задачах оценки параметров. 
+Оказалось, что обратная информация Фишера является нижней границей дисперсии при оценке параметров, называемой границей Крамера-Рао.
+Докажем это утверждение. 
+%
+Исходим из тождества:
+%
+\begin{multline}
+    \label{eq:21}
+        E[\hat{\theta}(X) - \theta] = 
+            \int(\hat{\theta}(x) - \theta)f(x,\theta)d\theta \\ 
+                = \int\theta(x)f(x,\theta)dx - \int f(x,\theta)dx \equiv 0 
+\end{multline}
+%
+Формально это выражение может быть записано следующим образом
+%
+\begin{multline}
+    \label{eq:22}
+        0 = \frac{\partial}{\partial \theta}
+            \int(\hat{\theta}(X) - \theta)f(x,\theta)dx \\
+                = \int(\hat{\theta}(X) - \theta)
+            \frac{\partial f(X, \theta)}{\partial \theta}dx - 
+        \int f(x,\theta)dx   
+\end{multline}
+%
+Поскольку $\frac{\partial f}{\partial \theta} = f(x,\theta) 
+    \frac{\partial \ln f(x,\theta)}{\partial \theta}$, 
+~(\ref{eq:22}) можно переписать в виде 
+%
+\begin{equation}
+    \label{eq:23}
+        \int(\hat{\theta}(X) - \theta)
+            f(x,\theta) \frac{\partial \ln f(x,\theta)}
+        {\partial \theta}dx = 1
+\end{equation}
+%
+Выражение~(\ref{eq:22}) перепишем в форме: 
+%
+\begin{equation}
+    \label{eq:24}
+        \int \left[\hat{\theta}(X-\theta)\Large \sqrt{\mathstrut f(x,\theta)}\right]
+            \left[\Large\sqrt{\mathstrut f(x,\theta)} 
+                \frac{\partial \ln f(x,\theta)}{\partial \theta}\right]dx = 1
+\end{equation}
+%
+Применяя к~(\ref{eq:24}) неравенство Коши-Шварца, получаем:
+%
+\begin{multline}
+    \label{eq:25}
+        1 = \left(\int \left[(\hat{\theta}(X)-\theta)
+            \Large \sqrt{\mathstrut f(x,\theta)}\right]
+                \left[\Large \sqrt{\mathstrut f(x,\theta)}
+                    \frac{\partial \ln f(x,\theta)}{\partial \theta} \right]
+                \right)^2 \\ 
+                \leq \int 
+            \underbrace{[(\hat{\theta}(X) - \theta)^2 f(x,\theta)]}_{Var(\hat{\theta}(X))}dx 
+        \underbrace{\int\left[f(x,\theta)\left(\frac{\partial \ln f(x,\theta)}
+    {\partial \theta}\right)^2 \right]dx}_{F_c(\theta)}
+\end{multline}
+%
+Отсюда получаем выражение для границы Крамера-рао:
+%
+\begin{equation}
+    \label{eq:26}
+        Var(\hat{\theta}(X)) \geq 1/{F_c (\theta)}
+\end{equation}
+
+
+
+
+\subsection{Квантовая информация Фишера}
+\begin{definition}\label{def:quantum-fisher-information}
+  Квантовая информация Фишера~\cite{liu2014} показывает, 
+  как быстро изменяется квантовое состояние, 
+  определяемое матрицей плотности, при изменении некоторого параметра. 
+\end{definition}
+Переход к квантовой информации Фишера соответствует обычной процедуре перехода от классических величин к квантовым. 
+Квантовая информация Фишера определяется по формуле:
+%
+\begin{equation}
+    \label{eq:3}
+        F_Q (\rho_\theta) =
+            Tr[\rho_\theta, L^2_\theta],
+\end{equation}
+%
+где $\rho_\theta$ --- это матрица плотности системы, зависящая от параметра $\theta$, а симметричный оператор логарифмической производной $L_\theta$, определяется из уравнения: 
+%
+\begin{equation}
+    \label{eq:4}
+        \frac{\partial\rho_\theta}{\partial\theta} = 
+            \frac{1}{2}
+                \left(L_\theta \rho_\theta +
+                \rho_\theta L_\theta
+            \right).
+\end{equation}
+%
+В классическом случае, когда $\left[L_\theta, \rho_\theta \right]$ = 0 из ~(\ref{eq:4}) находим, 
+что ${L_\theta\sim\frac{\partial\ln\rho_\theta}{\partial\theta}}$, 
+и формула~(\ref{eq:3}) дает результат, совпадающий с~(\ref{eq:fisher-information}).
+%
+Зависимость матрицы плотности системы от параметра $\theta$ может быть введена в систему разными способами. 
+Мы рассмотрим случай, когда эта зависимость определяется унитарной эволюцией. 
+%
+\begin{equation}
+    \label{eq:5}
+        \rho_\theta = 
+            e^{iH\theta}
+        \rho e^{-iH\theta}, 
+\end{equation}
+%
+где $\rho$ --- произвольная матрица плотности, $H$ --- эрмитов гамильтониан системы. 
+Такой способ введения параметра отвечает условиям многоквантовой спектроскопии ЯМР. 
+В этом случае: 
+%
+\begin{equation}
+    \label{eq:6}
+        \frac{\partial\rho_\theta}{\partial\theta} =
+            iH\rho_\theta - i\rho_\theta H = 
+        i \left[H,\rho_\theta \right]
+\end{equation}
+%
+Дальнейшие вычисления проведем в базисе, диагонализирующем матрицу плотности $\rho$ $\left(\rho =\sum\limits_{k} \lambda_k |k\rangle  \langle k| \right)$. 
+Используя уравнения ~(\ref{eq:4}) и ~(\ref{eq:6}) получаем 
+%
+\begin{multline}
+    \label{eq:7}
+        i \left[H,\rho_\theta \right]_{jk} =
+            \frac{1}{2} \sum_e \left(L_\theta \right)_{je} 
+                \left(\rho_\theta \right)_{ek} +
+                    \frac{1}{2} \sum_e \left(\rho_\theta \right)_{je} 
+                        \left(L_\theta \right)_{ek} =\\
+                    \frac{1}{2}\left(L_\theta \right)_{{jk}^{\lambda} k} +
+                \frac{1}{2}\lambda_j \left(L_\theta \right)_{jk} = 
+        \frac{1}{2} \left(\lambda_k + \lambda_j \right)
+    \left(L_\theta \right)_{ik}
+\end{multline}
+%
+Таким образом, 
+ %
+\begin{equation}
+    \label{eq:8}
+        \left(L_\theta \right)_{jk} =
+            \frac{2i\left[H,\rho_\theta \right]_{jk}}{\lambda_k + \lambda_j},
+\end{equation}
+%
+Умножим теперь~(\ref{eq:6}) на $L_\theta$ и возьмем след: 
+%
+\begin{equation}
+    \label{eq:9}
+        Tr\Bigg\{L_\theta \frac{\partial \rho_\theta}{\partial \theta} \Bigg\} =
+            \frac{1}{2} Tr\left(L^2_\theta \rho_\theta \right) +
+                \frac{1}{2} Tr\left(L_\theta \rho_\theta L_\theta \right) =
+            Tr \left(L^2_\theta \rho_\theta \right) = 
+        F_Q \left(\rho_\theta, H \right)
+\end{equation}
+%
+Далее 
+%
+\begin{equation}
+    \label{eq:10}
+        \left[H, \rho_\theta \right]_{jk} = \sum_e H_{je} 
+            \left(\rho_\theta \right)_{ek} - 
+                \sum_e \left(\rho_\theta \right)_{jl}H_{ek} =
+            H_{jk}\lambda_k - H_{jk}\lambda_j = 
+        \left(\lambda_k - \lambda_j \right) H_{jk}.
+\end{equation}
+%
+Теперь 
+%
+\begin{equation}
+    \label{eq:11}
+        F_Q \left(\rho_\theta, H \right) = 
+            \sum_{j,k}\frac{2i\left[H,\rho_\theta \right]_{jk}}
+                {\lambda_k + \lambda_j}
+                    i \left[H, \rho_\theta \right]_{kj} = 
+                2\sum_{j,k} \frac{\left(\lambda_j - \lambda_k \right)^2}
+            {\lambda_j + \lambda_k}
+        \left| \langle j|H|k \rangle \right|^2
+\end{equation}
+%
+В итоге, получаем основную формулу для квантовой информации Фишера 
+%
+\begin{equation}\label{eq:quantum-fisher-information}
+        F_Q \left(\rho_\theta, H \right) = 
+            2\sum_{j,k} \frac{\left(\lambda_j - \lambda_k \right)^2}
+                {\lambda_j + \lambda_k}
+            \left| \langle j|H|k \rangle \right|^2
+\end{equation}
+
+Покажем, что квантовая информация Фишера удовлетворяет свойствам~(\ref{def:f}), 
+и, следовательно, может быть использована для оценки количества запутанных частиц. 
+Квантовая информации Фишера в сепарабельной системе с матрицей плотности $\rho = \rho_1 \otimes \rho_2$ удовлетворяет свойству аддитивности: 
+%
+\begin{equation}\label{eq:31}
+  F_Q(\rho_1 \otimes \rho_2 ,H_1 \otimes I_2 + I_1 \otimes H_2) = 
+      F_{Q1} (\rho_1, H_1) + F_{Q2} (\rho_2 , H_2)
+\end{equation}
+% 
+Также, величина квантовой информации Фишера в системе из $N$ частиц
+ограничена сверху: 
+%
+\begin{equation}\label{eq:33}
+  F_Q \leq N^2
+\end{equation}
+%
+Докажем утверждение~(\ref{eq:33}). 
+Исходим из формулы
+%
+\begin{equation}
+    \label{eq:34}
+        F_Q = 2\sum_{\substack{j,k \\ \lambda_j + \lambda_k \neq 0}} 
+            \frac{(\lambda_j - \lambda_k)^2}{\lambda_j + \lambda_k} 
+                \left| \langle j|H|k \rangle \right|^2
+\end{equation}
+%
+Убедимся, что 
+\begin{equation}
+  \frac{(\lambda_j - \lambda_k)^2}{\lambda_j +\lambda_k} \leq 1.
+\end{equation}
+Неравенство 
+\begin{equation}
+  \lambda_j + \lambda_k \geq \lambda^2_j +\lambda^2_k 
+\end{equation}
+верно, т.к. $0\leq \lambda_j \leq 1$, $0\leq \lambda_k \leq 1$.
+%
+Далее
+\begin{equation}
+\lambda_j + \lambda_k \geq\lambda^2_j +\lambda^2_k \geq \lambda^2_j +\lambda^2_k - 2\lambda_j \lambda_k = (\lambda_j - \lambda_k)^2 \Rightarrow 1 \geq \frac{(\lambda_j - \lambda_k)^2}{\lambda_j + \lambda_k}.  
+\end{equation}
+%
+Гамильтониан Н в~(\ref{eq:34}) безразмерный. 
+Предполагаем, обезразмеривание проиведено на максимальный модуль недиагонального элемента гамильтониана Н (все элементы поделены на $\left| \langle j|H|k \rangle \right| + \left| \langle k|H|j \rangle \right| = 2\left| \langle j|H|k \rangle \right|$,)
+%
+тогда 
+%
+\begin{equation}
+    \label{eq:35}
+        \left| \langle j|H|k \rangle \right| \leq 1/2
+\end{equation}
+%
+В итоге получаем оценку сверху для квантовой информации Фишера:
+%
+\begin{equation}
+    \label{eq:36}
+        F_Q = 2\sum_{\substack{j,k \\ \lambda_j + \lambda_k \neq 0}} 
+            \frac{(\lambda_j - \lambda_k)^2}{\lambda_j + \lambda_k} 
+                \left| \langle j|H|k \rangle \right|^2
+            \leq 2\sum^N_{\substack{j,k \\ \lambda_j + \lambda_k \neq 0}} \left| \langle j|H|k \rangle \right|^2
+            \leq N^2
+\end{equation}
