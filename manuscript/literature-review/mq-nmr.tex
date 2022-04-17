@@ -111,9 +111,31 @@ $\omega_\mathrm{loc} (\epsilon = t_{c}\, \omega_\mathrm{loc} \ll 1)$,
 Поскольку многоквантовые когерентности ЯМР не могут наблюдаться непосредственно, они преобразуются в поперечную намагниченность (одноквантовую когерентность) на периоде смешивания. На периоде смешивания спиновая система облучается такой же последовательностью РЧ-импульсов, как и на подготовительном периоде, но фаза импульсов сдвигается на $\pi/2$
 (вместо $x$-импульсов подаются  $y$-импульсы).
 Формула~(\ref{eq:hmq-phased}) показывает, что при таком сдвиге фазы изменяется знак несекулярного двухспинового/двухквантового гамильтониана (1). Таким образом, на периоде смешивания создаются условия обращения времени [23], необходимые для сфазирования вкладов разных пар спинов в многоквантовые когерентности разных порядков [1].
+%
+Матрица плотности системы после периода смешивания может быть записана как \cite{Baum1985}
+\begin{equation}\label{eq:rho-after-mixing}
+  \rho_\mathrm{f}(\tau)
+  = e^{i{H_{MQ}}\tau} e^{i\phi I_z} e^{-i{ H_{MQ}}\tau}
+  \rho_\mathrm{i}
+  e^{i{ H_{MQ}}\tau} e^{-i\phi I_z} e^{-i{H_{MQ}}\tau} ,
+\end{equation}
+где начальное состояние системы $\rho_\mathrm{i}$
+и фаза $\phi$ определяются условиями МК эксперимента ЯМР~\cite{Baum1985}.
 
-Детектирующий импульс подается для переноса намагниченности в плоскость, перпендикулярную внешнему магнитному полю. Затем записывается одна точка, соответствующая максимальному значению спада свободной индукции на временном интервале $t_2$ для каждого инкремента фазы. Преобразование Фурье относительно инкремента фазы позволяет получать многоквантовые спектры, состоящие из набора узких линий, отвечающих различным порядкам когерентностей [22]. Такой метод существенно сокращает время проведения эксперимента по сравнению с традиционным методом, когда инкремент фазы изменяется пропорционально длительности периода эволюции (метод TPPI [1]).
-
+Детектирующий импульс подается для переноса намагниченности в плоскость, перпендикулярную внешнему магнитному полю.
+Измеряемый сигнал $G_\mathrm{HT}(\tau, \phi)$ определяется выражением
+\begin{equation}\label{eq:signal-after-mixing}
+  G(\tau, \phi)
+  = \tr{\rho_\mathrm{f}(\tau) I_z}
+  = \tr{
+    e^{iH_{MQ}\tau}e^{i\phi I_z}e^{-iH_{MQ}\tau}
+    \rho_\mathrm{i}
+    e^{iH_{MQ}\tau}e^{-i\phi I_z}e^{-iH_{MQ}\tau}
+    I_z
+  }.
+\end{equation}
+%
+Затем записывается одна точка, соответствующая максимальному значению спада свободной индукции на временном интервале $t_2$ для каждого инкремента фазы. Преобразование Фурье относительно инкремента фазы позволяет получать многоквантовые спектры, состоящие из набора узких линий, отвечающих различным порядкам когерентностей [22]. Такой метод существенно сокращает время проведения эксперимента по сравнению с традиционным методом, когда инкремент фазы изменяется пропорционально длительности периода эволюции (метод TPPI [1]).
 
 
 
@@ -406,10 +428,8 @@ $\mathrm{BeO}_3(\mathrm{OH})$ тетраэдров
 что спины $^1$H в кристаллах гамбергита могут служить хорошей моделью квазиодномерной спиновой цепи.
 
 
-
-
-
 \subsection{Модель эквивалентных спинов}
+\label{sec:model-equivalent-spins}
 % J. Baugh, A. Kleinhammes, D. Han, Q. Wang, and Y. Wu, Science 294, 1505 (2001).
 \begin{figure}[H]
   % \begin{subfigure}[t]{0.32\textwidth}
@@ -506,7 +526,7 @@ $\mathrm{BeO}_3(\mathrm{OH})$ тетраэдров
 что спиновая динамика описывается усредненной константой дипольной связи $D$,
 которая одинакова для всех пар спинов.
 Следовательно, многоквантовый гамильтониан системы может быть записан как
-\begin{equation}
+\begin{equation}\label{eq:mq-hamiltoninan-equivalent-spins}
   \bar H_\mathrm{MQ} = - \dfrac{D}{4} \left\{
       \left( I^{+} \right)^2 + \left( I^{-} \right)^2
   \right\},
@@ -542,11 +562,103 @@ $\mathrm{BeO}_3(\mathrm{OH})$ тетраэдров
 \end{equation}
 где каждый блок соответствует собственному значению полного углового момента.
 
+Для построения блока матрицы $H_\mathrm{MQ}^{S}$ необходимо определить ненулевые элементы операторов $I^{\pm}$.
+Ненулевые элементы этих операторов, связанные с полным спиновым угловым моментом S
+и имеют вид
+%
+\begin{equation}
+  \bar{M}I^+\ket{M-1} = \bra{M-1}I^-\ket{M} = \sqrt{(S + M)(S - M + 1)},
+\end{equation}
+%
+где $M = -S+1, -S+2, \dots, S-1, S$. Отсюда можно сделать вывод,
+что
+%
+\begin{multline}\label{eq:i-square-elements}
+  \bra{M}(I^+)^2\ket{M-2} = \bra{M-2}(I^-)^2\ket{M} \\
+  = \sqrt{(S + M)(S + M -1)(S - M + 1)(S - M + 2)},
+\end{multline}
+%
+где $M = -S+2, -S+3, \dots, S-1, S$,
+а остальные элементы равны нулю.
+Выражение~(\ref{eq:i-square-elements}) определяет ненулевые элементы блока гамильтониана $H_\mathrm{MQ}^{S}$.
+Размер блока гамильтониана $H_{MQ}^S$ равен $2S+1$.
+Полный размер гамильтониана, $2^N$,
+может быть определен, как сумма размерностей всех блоков:
+%
+\begin{equation}\label{eq:full-dimension}
+  \sum\limits_N n_N(S)(2S+1) = 2^N,
+\end{equation}
+%
+где $n_N(S)$ --- это количество состояний системы из $N$ спинов
+с фиксированным значением полного углового момента $S$,
+которое может быть вычислено по формуле~\cite{Landau3}:
+%
+\begin{equation}\label{eq:coeff_n}
+  n_N(S)  = \dfrac{ N! (2S+1)}
+  {(\frac N 2 + S + 1)!(\frac N 2 - S)!},
+  \quad
+  0\leq S \leq \frac N 2.
+\end{equation}
+%
 
+% Докажем выражение~(\ref{eq:full-dimension}),
 
-\subsection{Дипольно упорядоченное состояние}
+% \subsection{Дипольно упорядоченное состояние}
 
 \subsection{Измерение информации Фишера}
+\label{sec:quantum-fisher-information-mesuarement-at-high-temperature}
+
+% \subsection{Второй момент МК~спектра~ЯМР~как мера многоспиновой запутанности}
+% \label{sec:4}
+%
+% Выражение~(\ref{eq:8}) для МК~сигнала~ЯМР~$G(\tau,\phi)$ может быть разложено в ряд по инкременту фазы импульсов
+% %
+% \begin{equation}
+%   \begin{split}
+%     \label{eq:17}
+%     G(\tau,\phi)
+%     & = \mathrm{Tr} \left\{
+%       \rho(\tau) e^{i \phi I_\mathrm{z} }
+%       \rho(\tau) e^{-i\phi I_\mathrm{z}}
+%     \right\} \\
+%     & = \mathrm{Tr} \left\{ \rho^2(\tau) \right\}
+%     - \phi^2 \mathrm{Tr} \left\{
+%       \rho^2(\tau) I^2_\mathrm{z}
+%       - (\rho(\tau) I_\mathrm{z})^2
+%     \right\}
+%     + O(\phi^3)
+%   \end{split}
+% \end{equation}
+% %
+% Можно доказать~\cite{Girolami2017}, что квантовая информация Фишера $F_\mathrm{Q}(\rho,I_\mathrm{z})$~\cite{Helstrom1976} удовлетворяет неравенству:
+% %
+% \begin{equation}
+%   \label{eq:18}
+%   F_\mathrm{Q}(\rho,I_\mathrm{z}) \geq 4 \mathrm{Tr} \left\{ \rho^2 I^2_\mathrm{z} - (\rho I_\mathrm{z})^2 \right\}
+% \end{equation}
+% %
+% В то же время легко проверить, что выражение $2 \mathrm{Tr} \left\{ \rho^2(\tau) I_\mathrm{z}^2 - \left( \rho(\tau) I_\mathrm{z} \right)^2 \right\}$ равно второму моменту $M_2$ распределения интенсивностей МК~когерентностей~ЯМР~\cite{Khitrin1997}
+% %
+% \begin{equation}
+%   \label{eq:19}
+%   M_2 = \sum_{n} n^2 J_n (\tau) ,
+% \end{equation}
+% %
+% где $J_n(\tau)$ ($n=0,\pm 2, \pm 4, \cdots$) определяется уравнением~(\ref{eq:13}).
+% Таким образом, второй момент распределения МК~интенсивностей~ЯМР~дает нижнюю границу квантовой информации Фишера $F_\mathrm{Q}(\rho,I_\mathrm{z})$.
+% Также показано~\cite{T_th2014,Pezz2018}, что, если
+% %
+% \begin{equation}
+%   \label{eq:20}
+%   F_\mathrm{Q} (\rho,I_\mathrm{z}) > n k^2 + (N - n k)^2,
+% \end{equation}
+% %
+% где $n$ - целая часть ${N/k}$, то система с матрицей плотности $\rho(\tau)$ содержит  $(k+1)$ запутанных спинов~\cite{Pezz2009,Hyllus2012,T_th2012}.
+% Результаты численного анализа многоспиновой запутанности в системе спин-несущих молекул (атомов), первоначально приготовленных в дипольном упорядоченном состоянии, представлены в следующем разделе.
+%
+%
+%
+
 %
 % % \begin{figure}
 % %     \centering
@@ -555,6 +667,7 @@ $\mathrm{BeO}_3(\mathrm{OH})$ тетраэдров
 % %     \label{fig:spectrum}
 % % \end{figure}
 %
+
 % Начальная матрица плотности в МК ЯМР.
 % %
 % \begin{equation}
@@ -591,74 +704,182 @@ $\mathrm{BeO}_3(\mathrm{OH})$ тетраэдров
 %
 % Формулы~(\ref{eq:14}),~(\ref{eq:16}) полнотью определяют квантовую информацию Фишера согласно формуле~(\ref{eq:12}).
 %
-% % -----
+% -----
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{mq-coherence-intensities-hist.png}
+%     \caption{Распределение интенсивности МК когерентностей ЯМР.}
+%     \label{fig:distribution}
+% \end{figure}
 %
-% % \begin{figure}
-% %     \centering
-% %     \includegraphics[width=\textwidth]{mq-coherence-intensities-hist.png}
-% %     \caption{Распределение интенсивности МК когерентностей ЯМР.}
-% %     \label{fig:distribution}
-% % \end{figure}
-% %
-% \begin{multline}
-%     \label{eq:27}
-%         I(t) = Tr\{e^{-iHt} \rho e^{iHt} \rho\} =
-%             Tr\{(1-iHt - \frac{1}{2}H^2 t^2)
-%                 \rho (1+iHt - \frac{1}{2}H^2 t^2) \rho\} \\
-%                   = Tr\{ \rho^2 - it [H,\rho] + t^2 H\rho H\rho -
-%                         \frac{t^2}{2}H^2 \rho^2 - \frac{t^2}{2} \rho H^2\rho\} \\
-%                    = Tr\{\rho^2\} - t^2 Tr\{\rho^2 H^2 - \rho H\rho H\} \\
-%                = Tr\{\rho^2\} \left(1-t^2 \frac{Tr\{\rho^2 H^2 - \rho H \rho H}{Tr(\rho^2)}\right)
-% \end{multline}
-% %
-% Номировка в МК ЯМР:
-% %
-% \begin{equation*}
-%     Tr\{\rho^2\} = Tr \left( \sum\limits_{n,m} \rho_n \rho_m \right) =
-%         Tr \sum\limits_{n} \rho_n \rho_n =
-%     \sum_n J_n (t) \equiv 1
-% \end{equation*}
-% %
-% Второй момент~\cite{khitrin1997}:
-% %
-% \begin{equation}
-%     \label{eq:28}
-%         M_2 = \frac{2Tr\{\rho^2 H^2 - \rho H \rho H\}}{Tr(\rho^2)} =
-%             2Tr\{\rho^2 H^2 - \rho H \rho H\}
+
+В разделе~\ref{sec:quantum-fisher-information} было показано,
+что информацию Фишера можно интерпретировать как количественную оценку  запутанных частиц в системе.
+Дальнейшее исследование многочастичной запутанности требует
+разработки экспериментальных методов
+для измерения квантовой информации Фишера.
+В этом разделе будет показано,
+что удвоенный второй момент распределения МК когерентностей ЯМР,
+которые возникают на подготовительном периоде МК эксперимента ЯМР
+(см. раздел~\ref{sec:mq-nrm-experiment}),
+определяет нижнюю границу информации Фишера~\cite{Garttner2018}.
+
+Пусть система в начальный момент времени находится в термодинамическом равновесии,
+тогда матрица плотности системы имеет вид
+%
+\begin{equation}
+  \label{eq:rho_eq}
+  \rho(0)
+  = \rho_{\mathrm{eq}}
+  = \dfrac{
+    e^{\frac{\hbar\omega_{0}}{kT} I_z}
+  }{
+    \tr{e^{\frac{\hbar\omega_{0}}{kT} I_z}}
+  }
+  \approx \dfrac{1}{2^N} (1 + bI_z)
+  \sim I_z.
+\end{equation}
+%
+Эволюционная матрица плотности на подготовительном периоде МК эксперимента ЯМР,
+где динамика определяется стационарным МК гамильтонианом $H_\mathrm{MQ}$,
+может быть выражена как
+%
+\begin{equation}\label{eq:rho_eval_ht}
+  \rho_\mathrm{HT} (\tau)
+   =  e^{-iH_\mathrm{MQ}\tau} I_z e^{iH_\mathrm{MQ}\tau}.
+\end{equation}
+%
+С учетом Ур.~(\ref{eq:rho_eval_ht}) выражение~(\ref{eq:signal-after-mixing})
+финального сигнала МК эксперимента ЯМР $G_\mathrm{HT}(\tau,\phi)$ можно переписать в виде
+%
+\begin{multline}\label{eq:signal-after-mixing-ht}
+  G_\mathrm{HT}(\tau,\phi)
+  = \tr{
+  	e^{iH_{MQ}\tau} e^{i\phi I_z} e^{-iH_{MQ}\tau} I_z
+  	e^{iH_{MQ}\tau} e^{-i\phi I_z} e^{-iH_{MQ}\tau} I_z
+  }
+  \\
+  = \tr{
+    e^{i\phi I_z} \rho_\mathrm{HT}(\tau)
+    e^{-i\phi I_z}\rho_\mathrm{HT}(\tau)
+  }.
+\end{multline}
+%
+Из выражения~(\ref{eq:signal-after-mixing-ht}) следует,
+что $G_\mathrm{HT}(\tau, \phi)$ является неупорядоченным по времени коррелятором ``out-of-time ordered correlator'' (OTOC)~\cite{Garttner2018, Doronin2019}.
+Важно отметить, что данное свойство является ключевым в доказательстве связи
+второго момента МК спектра ЯМР и квантовой информации Фишера.
+Все дальнейшие рассуждения будут опираться на него.
+
+Второй момент (дисперсия) $M_2(\tau)$ распределения интенсивностей МК когерентностей ЯМР может быть рассчитан из уравнения ~(\ref{eq:signal-after-mixing-ht})
+\begin{equation}\label{eq:m2-derivative}
+  M_2(\tau)
+  = -\frac{1}{G_\mathrm{HT}(\tau, 0)}
+    \frac{d^2 G_\mathrm{HT}(\tau, \phi)}{d\phi^2}\bigg|_{\phi=0}.
+\end{equation}
+%
+Для этого разложим выражение~(\ref{eq:signal-after-mixing-ht})
+для сигнала~$G_\mathrm{HT}(\tau,\phi)$ в ряд по инкременту фазы импульсов
+%
+% \begin{equation}\label{eq:17}
+% \begin{split}
+\begin{multline}
+  G_\mathrm{HT}(\tau,\phi)
+  = \tr{
+    \rho_\mathrm{HT}(\tau) e^{i \phi I_\mathrm{z} }
+    \rho_\mathrm{HT}(\tau) e^{-i\phi I_\mathrm{z}}
+  } \\
+  =  \tr{
+    (1 - iI_z\phi - \frac{1}{2}I_z^2 \phi^2)
+    \rho_\mathrm{HT}(\tau)
+    (1 + iI_z\phi - \frac{1}{2}I_z^2 \phi^2)
+    \rho_\mathrm{HT}(\tau)
+  } \\
+  = \tr{
+    \rho_\mathrm{HT}^2
+    - it [I_z,\rho_\mathrm{HT}(\tau)]
+    + \phi^2 I_z \rho_\mathrm{HT}(\tau) I_z \rho_\mathrm{HT}(\tau)
+    \\
+    - \frac{\phi^2}{2}I_z^2 \rho_\mathrm{HT}^2(\tau)
+    - \frac{\phi^2}{2} \rho_\mathrm{HT}(\tau) I_z^2 \rho_\mathrm{HT}(\tau)
+  } \\
+  = \tr{ \rho_\mathrm{HT}^2(\tau) }
+  - \phi^2 \tr{
+    \rho_\mathrm{HT}^2(\tau) I^2_\mathrm{z}
+    - (\rho_\mathrm{HT}(\tau) I_\mathrm{z})^2
+  }
+  + O(\phi^3)
+% \end{split}
 % \end{equation}
-% %
-% \begin{multline*}
-%         2Tr\{\rho^2 H^2 - \rho H \rho H\} \\
-%            = 2\sum_{j,k}\{\lambda^2_j H_{jk} H_{kj} - \lambda_j H_{jk} \lambda_k H_{kj}\} =
-%                  2\sum_{j,k} (\lambda^2_j - \lambda_j \lambda_k)H_{jk}H_{kj} \\
-%                    = \sum_{j,k} (\lambda^2_j - \lambda_j \lambda_k)H_{jk}H_{kj} +
-%                         \sum_{j,k} (\lambda^2_j - \lambda_j \lambda_k)H_{kj}H_{jk} \\
-%                     = \sum_{j,k} (\lambda^2_j - 2\lambda_j \lambda_k + \lambda^2_k)H_{kj}H{jk} =
-%                 \sum_{j,k} (\lambda_j - \lambda_k)^2 \left| \langle j|H|k \rangle \right|^2
-% \end{multline*}
-% %
-% \begin{equation}
-%     \label{eq:29}
-%             M_2 = \sum_{j,k} (\lambda_j - \lambda_k)^2 \left| \langle j|H|k \rangle \right|^2
-% \end{equation}
-% %
-% Вернемся к квантовой информации Фишера
-% %
-% \begin{equation*}
-%     F_Q = 2\sum_{j,k} \frac{(\lambda_j - \lambda_k)^2}
-%     {\lambda_j + \lambda_k} |\langle j|H|k \rangle|^2
-% \end{equation*}
-% %
-% Поскольку $Tr(\rho) = 1$, $\lambda_j + \lambda_k \leq 1$ и
-% %
-% \begin{equation}
-%     \label{eq:30}
-%         F_Q \geq 2\sum_{j,k} (\lambda_j - \lambda_k)^2 \left| \langle j|H|k \rangle \right|^2 = 2M_2
-% \end{equation}
+\end{multline}
 %
-% Таким образом, нижняя граница информации Фишера равна удвоенному второму моменту~\cite{g_arttner2018}.
-% Главным недостатком этого результата является то,
-% что связь со вторым моментом интенсивностей многоквантовых когерентностей
-% работает только в высоко температурном приближении.
+Отсюда второй момент распределения МК когерентностей ЯМР
 %
+\begin{equation}\label{eq:m2-trace}
+  M_{2,\mathrm{HT}}(\tau) = 2 \tr{
+    \rho_\mathrm{HT}(\tau)^2 I_z^2
+    - \rho_\mathrm{HT}(\tau) I_z \rho_\mathrm{HT}(\tau) I_z
+  },
+\end{equation}
 %
+так как в МК эксперименте ЯМР сумма всех интенсивностей нормируется на 1
+и
+\begin{equation}\label{eq:mq-coherences-sum}
+  G_\mathrm{HT}(\tau, 0)
+  = \tr{\rho_\mathrm{HT}(\tau)^2}
+  = \tr{\sum\limits_{n,m} \rho_n \rho_m}
+  = \tr{\sum\limits_{n} \rho_n \rho_n}
+  = \sum_n J_n (\tau) \equiv 1,
+\end{equation}
+где $\rho_n$ --- это вклад МК когерентности $n$-ого порядка в матрицу плотности $\rho_\mathrm{HT}(\tau)$,
+а $J_n$ --- интенсивность МК когерентности $n$-ого порядка.
+%
+Выражение~(\ref{eq:m2-trace}) для второго момента $M_{2,\mathrm{HT}}(\tau)$
+может быть выражено через собственные значения $\lambda_i$ матрицы плотности $\rho_\mathrm{HT}(\tau)$:
+%
+\begin{equation}\label{eq:m2-via-lambdas}
+\begin{split}
+  M_{2,\mathrm{HT}}(\tau)
+  &= 2 \sum_{j,k}\p{\lambda^2_j (I_z)_{jk} (I_z)_{kj} - \lambda_j (I_z)_{jk} \lambda_k (I_z)_{kj}}
+  \\
+  &= 2 \sum_{j,k} (\lambda^2_j - \lambda_j \lambda_k) (I_z)_{jk} (I_z)_{kj}
+  \\
+  &= \sum_{j,k} (\lambda^2_j - \lambda_j \lambda_k) (I_z)_{jk} (I_z)_{kj}
+    + \sum_{j,k} (\lambda^2_j - \lambda_j \lambda_k) (I_z)_{kj} (I_z)_{jk}
+  \\
+  &= \sum_{j,k}
+    (\lambda^2_j - 2\lambda_j \lambda_k + \lambda^2_k)
+    (I_z)_{kj} (I_z)_{jk}
+  \\
+  &= \sum_{j,k}
+    (\lambda_j - \lambda_k)^2
+    \left| \bra{j} I_z \ket{k} \right|^2
+\end{split}
+\end{equation}
+%
+По определению~\ref{def:quantum-fisher-information} квантовая информация Фишера дается выражением
+\begin{equation}
+    F_Q(\rho_\mathrm{HT}(\tau), I_z) = 2\sum_{j,k} \frac{(\lambda_j - \lambda_k)^2}{\lambda_j + \lambda_k}
+    \left| \bra{j} I_z \ket{k} \right|^2.
+\end{equation}
+Поскольку $\tr{\rho_\mathrm{HT}} = 1$, $\lambda_j + \lambda_k \leq 1$ и
+%
+\begin{equation}\label{eq:qfi-low-bound}
+  F_Q(\rho_\mathrm{HT}(\tau), I_z) \geq 2\sum_{j,k} (\lambda_j - \lambda_k)^2 \left| \bra{j} I_z \ket{k} \right|^2
+\end{equation}
+%
+Из выражений~(\ref{eq:qfi-low-bound})~и~(\ref{eq:m2-via-lambdas}) следует, что
+\begin{equation}
+  F_Q(\rho_\mathrm{HT}(\tau), I_z) \geq M_{2,\mathrm{HT}}(\tau)
+\end{equation}
+%
+Таким образом, нижняя граница информации Фишера равна удвоенному второму моменту.
+
+Данный результат получен в случае высоких зеемановских температур,
+когда начальное состояние системы $I_z$.
+В свою очередь квантовые корреляции преимущественно возникают при температурах близких к нулю,
+поэтому исследование многочастичной запутанности этим методом невозможно.
+В следующей главе~\ref{chapter:quantum-fisher-information-measurement}
+будет предложено такое обобщение МК эксперимента ЯМР,
+которое позволить измерять информацию Фишера при произвольной температуре.
