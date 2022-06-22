@@ -1,0 +1,82 @@
+\section{Сравнение информаций Фишера и Вигнера-Янасе}
+\label{sec:qfi-wyi-comparison}
+%
+Квантовая информация Фишера~(см. раздел~\ref{sec:quantum-fisher-information})
+и косая информация Вигнера-Янасе~(см. раздел~\ref{sec:skew-wigner-yanase-information})
+удовлетворяют свойствам обобщенной информации~(см. определение~\ref{def:f}).
+Следовательно, обе информации могут быть использованы для исследования многочастичной запутанности.
+Для того чтобы прояснить связь между этим фундаментальными мерами,
+в этом разделе будет проведено сравнение величин этих информаций для произвольной матрицы плотности $\rho$
+и оператора проекции полного углового спинового момента на ось~$z$
+в качестве наблюдаемой.
+
+Матрица плотности $\rho$ в диагонализирующем ее базисе,
+имеет вид
+%
+\begin{equation}
+  \rho = \sum\limits_i \lambda_i \ket{i}\bra{i},
+\end{equation}
+%
+где $\lambda_i$ --- собственное значение,
+а $\ket{i}$ соответствующий собственный вектор.
+%
+В этом базисе косая информация Вигнера-Янасе может быть записана как:
+%
+\begin{multline}\label{eq:wyi-via-lambda}
+  I_\mathrm{WY}(\rho, I_z)
+  = -2 \tr{[\rho, I_z]^2}
+  = -2 \sum\limits_{i,k} [\sqrt{\rho}, I_z]_{ik} [\sqrt{\rho}, I_z]_{ki}
+  \\
+  = -2 \sum\limits_{i,k}
+    \p{\sqrt{\lambda_i}(I_z)_{ik} - (I_z)_{ik} \sqrt{\lambda_k}}
+    \p{\sqrt{\lambda_k}(I_z)_{ki} - (I_z)_{ki} \sqrt{\lambda_i}}
+  \\
+  = -2 \sum\limits_{i,k} \p{
+    \sqrt{\lambda_i}\sqrt{\lambda_k}
+    - \lambda_k
+    - \lambda_i
+    + \sqrt{\lambda_k}\sqrt{\lambda_i}
+    }
+    (I_z)^2_{ki}
+  \\
+  = 2 \sum\limits_{i,k} \p{\sqrt{\lambda_i} -\sqrt{\lambda_k}}^2
+    \left| \bra{i} I_z \ket{k} \right|^2
+\end{multline}
+%
+В свою очередь квантовая информации Фишера может быть выражена как
+%
+\begin{multline}\label{eq:qfi-via-wyi}
+  I_\mathrm{F}(\rho, I_z)
+  = 2 \sum\limits_{i,k}
+    \dfrac{\p{\lambda_i - \lambda_k}^2}{\lambda_i + \lambda_k}
+    \left| \bra{i} I_z \ket{k} \right|^2
+  \\
+  = 2 \sum\limits_{i,k}
+    \dfrac{
+      \p{\sqrt{\lambda_i} +\sqrt{\lambda_k}}^2
+    }{
+      \lambda_i + \lambda_k
+    }
+    \p{\sqrt{\lambda_i} -\sqrt{\lambda_k}}^2
+    \left| \bra{i} I_z \ket{k} \right|^2
+  \\
+  = 2 \sum\limits_{i,k}
+    \p{1 + \dfrac{2\sqrt{\lambda_i}\sqrt{\lambda_k}}{\lambda_i + \lambda_k}}
+    \p{\sqrt{\lambda_i} -\sqrt{\lambda_k}}^2
+    \left| \bra{i} I_z \ket{k} \right|^2
+  \\
+  = 2 \sum\limits_{i,k} \p{1 + \alpha_{ik}}
+  \p{\sqrt{\lambda_i} -\sqrt{\lambda_k}}^2
+  \left| \bra{i} I_z \ket{k} \right|^2,
+\end{multline}
+%
+где $\alpha_{ik} = \dfrac{2\sqrt{\lambda_i}\sqrt{\lambda_k}}{\lambda_i + \lambda_k}$.
+Так как $ 0 \leq \alpha_{ik} \leq 1$
+из выражений~(\ref{eq:qfi-via-wyi})~и~~(\ref{eq:wyi-via-lambda}) следует, что
+%
+\begin{equation} \label{eq:qfi-wyi-inequality}
+    I_{WY}\left(\rho, I_z\right)
+    \leq I_F\left(\rho, I_z\right)
+    \leq 2I_{WY}\left(\rho, I_z\right).
+\end{equation}
+
