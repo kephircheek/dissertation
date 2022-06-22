@@ -1,0 +1,132 @@
+\documentclass[
+    % notes,
+    aspectratio=169
+]{beamer}
+\hypersetup{unicode=true} % fix "PD1 encoding, removing `\CYRI'"
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{{../figures}}
+
+\newcommand{\tr}[1]{\mathrm{Tr} \left\{ #1 \right\}}
+\newcommand{\sx}{I_\mathrm{x}}
+\newcommand{\sy}{I_\mathrm{y}}
+\newcommand{\sz}{I_\mathrm{z}}
+\newcommand{\hdz}{H_\mathrm{dz}}
+
+
+\setbeamertemplate{caption}[numbered] % number figures
+
+\usetheme{Madrid}
+
+\title[Многочастичная запутанность]{Многочастичная запутанность}
+\subtitle{в многоквантовой спектроскопии ЯМР в твердом теле}
+\author[Лазарев И.Д.]{\textbf{И.Д. Лазарев\inst{1,2}} \and  Э.Б. Фельдман\inst{2}}
+
+\institute[МГУ, ИПХФ РАН]
+{
+  \inst{1}%
+  Московский государственный университет им. М. В. Ломоносова
+  \and
+  \inst{2}%
+  Институт проблем химической физики РАН
+}
+
+\date[2022]{Июнь 2022}
+
+
+\begin{document}
+
+\frame{\titlepage}
+\note{
+    Еще раз добрый день, коллеги!
+    Я веду свою научную работу в Черноголовке
+    в ИПХФ РАН в теоретическом отделе
+    в лаборатории спиновой динамики и спинового компютинга
+    под руководством Фельдмана Эдуарда Беньяминовича
+
+    Тема моей работы: Многочастичная запутанность...
+
+    Почему это важно?
+    Квантовые корреляции ответственны за преимущества квантовых приборов и устройств над их классическими аналогами.
+    Такие корреляции отсутствуют в классической физике.
+    Изучение их свойств и методов управления ими является теоретической основой квантовых технологий.
+
+    Почему ЯМР?
+    Потомучто в твердотельном ЯМР можно значительно продвинуться в этом направлении.
+}
+
+% \AtBeginSection[] {} % show display table of contest before new section
+\begin{frame}
+\frametitle{План доклада}
+\tableofcontents
+\end{frame}
+\note{
+    В моем докладе будет две основные секции.
+    Первая посвящена разбору задачи и методологии,
+    а вторая полученным результатам.
+}
+
+\section{Введение}
+\input{introduction}
+
+\section{Исследование квантовых корреляции методами ЯМР}
+
+\subsection{Многочастичная запутанность}
+\input{literature-review/manyparticle-entanglement}
+
+\subsection{Квантовая информация Фишера}
+\input{literature-review/quantum-fisher-information}
+
+\subsection{Косая информация Вигнера-Янасе}
+\input{literature-review/skew-wigner-yanase-information}
+
+
+\subsection{Многоквантовая спектроскопия ЯМР}
+\input{literature-review/mq-nmr-experiment}
+\input{literature-review/mq-nmr-coherences-distribution}
+
+
+\section{Измерение информации Фишера в МК эксперименте ЯМР}
+\input{fisher-information-mesuarment-in-mq-nmr}
+
+\section{Многочастичная запутанность в системе эквивалентных спинов}
+\input{literature-review/model-equivalent-spins}
+\input{literature-review/mq-nmr-mq-hamiltonian-diagonalization}
+\input{many-particle-entanglement-in-nanopore}
+
+\section{Многочастичная запутанность в квазиодномерных цепочках}
+\input{literature-review/model-uniform-spin-chain}
+\input{literature-review/model-zigzag-spin-chain}
+\input{many-particle-entanglement-in-zigzag-chain}
+
+\section{Измерение информации Вигнера-Янасе в МК эксперименте ЯМР}
+\input{wigner-yanase-information-mesuarment-in-mq-nmr}
+
+% \section{Многоквантовая динамика при низких температурах}
+% \input{results/mq-dynamic-at-low-temperature}
+%
+% \section{Многоспиновая запутанность в системе эквивалентных спинов}
+% \input{models/equivalent-spins}
+% \input{results/equivalent-spins-entanglement-with-term-equilibrium-state}
+% \input{results/equivalent-spins-entanglement-with-dipolar-ordered-state}
+%
+% \section{Многоспиновая запутанность в цепочках}
+% \input{models/zigzag-spin-chain}
+% \input{results/zigzag-spin-chain-entanglement}
+%
+% \section{Определение информации Вигнера-Янасе в МК эксперименте ЯМР}
+% \input{results/determination-of-wigner-yanase-information}
+%
+% \section{Сравнение информации Вигнера-Янасе и Фишера}
+% \input{results/comparison-wyi-and-fi}
+
+\section{Итоги}
+\input{conclusions}
+% \input{suplemental-materials}
+
+\end{document}

@@ -1,0 +1,66 @@
+\begin{frame}{Косая информация Вигнера-Янасе}
+  \begin{block}{}
+    Косая информация\footnote[frame]{
+      E. P. Wigner and M. M. Yanase,
+      \textit{Proc. Nat. Acad. Sci. USA},
+      \textbf{49}, 910–918 (1963)
+    }
+    была введена Вигнером и Янасе в контексте квантовых измерении в качестве меры информации,
+    содержащейся в векторе квантового состояния, лежащего под углом по отношению к наблюдаемой $A$.
+  \end{block}
+  $$
+    I_{WY}(\rho, A)
+    = -\frac{1}{2} Tr([\sqrt{\rho}, A])^2
+    = Tr(\rho A^2) - Tr(\sqrt \rho A \sqrt \rho  A )
+  $$
+  Для чистых состояний:
+  $$
+    I_{WY}(| \psi \rangle, A)
+    = \langle \psi | A^2 | \psi \rangle - \langle \psi | A| \psi \rangle ^2
+  $$
+  \vspace{-5mm}
+  \begin{block}{}
+    Можно интерпретировать\footnote[frame]{S. Luo, \textit{Phys. Rev. Lett.} \textbf{91}, 180403 (2003)},
+    косую информацию
+    как квантовая неопределенность наблюдаемой $A$ для квантового состояния $\rho$.
+  \end{block}
+\end{frame}
+\note{
+    Косая информация была введена Вигнером и Янасе в контексте квантовых измерении.
+    Позднее было признано, что косая информация,
+    помимо своего изначального значения как меры информационного содержания состояний,
+    допускает также несколько интерпретаций,
+    носящих более физический и теоретико-информационный характер.
+
+    В настоящее время эта величина нашла много применений в квантовой информации.
+
+    Интригующей и тонкой особенностью косой информации является использование в ней квадратного корня из вектора квантового состояния (оператора плотности).
+
+    Но тут
+
+    % Skew information was introduced by Wigner and Yanase in the context of quantum measurements.
+    % It is the quantity as a measure of the information content of the quantum state $\rho$ \textit{skew} to the observable $H$.
+    % Here, \textit{tr} denotes the operator trace, and brackets denotes the commutator between operators.
+%
+    % Not that skew information is quite different from, but deeply related to, the ubiquitous von Neumann entropy [1]–[4].
+    % Alse from a dual standpoint, we can interpret skew information
+    % as the quantum uncertainty of the observable $A$ in the quantum state $\rho$ [5]–[8].
+%
+    % Skew information has many nice properties and interpretations that make it useful in quantum information theory[1], [8].
+    % For example, skew information can be used to construct measures of quantum correlations [9]–[11],
+    % to quantify quantum coherence [12]–[15], to quantify asymmetry [15], and so on.
+    % It has also been used to study quantum phase transitions [16]–[20], uncertainty relations [6], [21]–[23], et cetera.
+%
+    % However such investigations like many-particle entanglement require the development of corresponding experimental methods.
+    % In particular, it was shown [6] that a lower bound on the quantum Fisher information coincides with the double
+    % second moment of the spectrum of multiple quantum (MQ) coherences.
+    % % M. G\"arttner, P. Hauke, and A.M. Rey.Phys. Rev.Lett. 120, 040402, 2018
+%
+    % Bellow we demonstrate that the Wigner–Yanase information in a spin system (s = 1/2) with the dipole–dipole interactions
+    % (DDI) in the MQ NMR experiment also connected to second moment of the spectrum of multiple quantum
+    % (MQ) coherences.
+%
+    % It is not a random magic because skew information may be identifier as a paradigmatic version of quantum Fisher information.
+    % % the statistical idea underlying the skew information is the Fisher information in the theory
+    % % of statistical estimation.
+}%

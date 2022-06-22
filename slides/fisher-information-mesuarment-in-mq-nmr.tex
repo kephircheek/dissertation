@@ -1,0 +1,32 @@
+\begin{frame}{Определение информации Фишера в МК ЯМР (PRA-19)\footnote{S.I. Doronin, E.B. Fel'dman,  I.D. Lazarev, \textit{Phys. Rev. A}, \textbf{100}, 022330 (2019)}}
+  $$ G(\tau, \phi) =
+     \mathrm{Tr}\left\{
+         e^{iH_\mathrm{MQ}\tau} e^{i\phi I_z} e^{-iH_\mathrm{MQ}\tau}
+         \rho_\mathrm{eq}
+         e^{iH_\mathrm{MQ}\tau} e^{-i\phi I_z} e^{-iH_\mathrm{MQ}\tau}
+         I_z \right\}
+  $$
+  \begin{alertblock}{}
+      Дисперсия распределения интенсивности МК когерентностей ЯМР определяет нижнюю границу информации
+      Фишера\footnote[frame]{
+      M. G\"arttner, P. Hauke, and A.M. Rey. \textit{Phys. Rev. Lett.} \textbf{120}, 040402 (2018)}:
+      $$
+      F_Q \geq 2M_2
+      $$
+  \end{alertblock}
+  Однако формула справедлива только в том случае,
+  если сигнал $G(\tau, \varphi)$ является \textit{out-of-time-ordered correlator} (OTOC).
+  Для низких температур это условие не выполняется.
+  Возможно обойти это ограничение,
+  если усреднить сигнал МК эксперимента ЯМР по начальному состоянию:
+  $$ G_\mathrm{LT}(\tau, \phi)
+     = \mathrm{Tr}\left\{
+       e^{iH_\mathrm{MQ}\tau} e^{i\phi I_z} e^{-iH_\mathrm{MQ}\tau}
+       \rho_\mathrm{eq}
+       e^{iH_\mathrm{MQ}\tau} e^{-i\phi I_z} e^{-iH_\mathrm{MQ}\tau}
+       {\color{red} \rho_\mathrm{eq}}
+    \right\}
+  $$
+\end{frame}
+
+
