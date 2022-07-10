@@ -45,7 +45,7 @@
 % pic
 \usepackage[pdftex]{graphicx, xcolor}
 % filepath for pic
-\graphicspath{{../figures}}
+\graphicspath{{figures}}
 % for subfigure
 \usepackage{subcaption}
 
@@ -63,21 +63,21 @@
 \begin{document}
 \maketitle
 
-\input{title-page}\addtocounter{page}{1}
+\input{manuscript/title-page}\addtocounter{page}{1}
 
 \tableofcontents
 
 %\raggedright  %отмена переносов
 %\justify %выравнивание по ширине
 
-\input{introduction}
-\input{literature-review/main}
-\input{fisher-information-mesuarment-in-mq-nmr}
-\input{many-particle-entanglement-in-nanopore}
-\input{many-particle-entanglement-in-zigzag-chain}
-\input{wigner-yanase-information-mesuarment-in-mq-nmr}
-\input{conclusions}
+\input{manuscript/introduction}
+\input{manuscript/literature-review}
+\input{manuscript/fisher-information-mesuarment-in-mq-nmr}
+\input{manuscript/many-particle-entanglement-in-nanopore}
+\input{manuscript/many-particle-entanglement-in-zigzag-chain}
+\input{manuscript/wigner-yanase-information-mesuarment-in-mq-nmr}
+\input{manuscript/conclusions}
 
-\input{bibliography}
+\input{manuscript/bibliography}
 
 \end{document}
