@@ -3,30 +3,17 @@
     aspectratio=169
 ]{beamer}
 \hypersetup{unicode=true} % fix "PD1 encoding, removing `\CYRI'"
-\usepackage[utf8]{inputenc}
-\usepackage[T2A,T1]{fontenc}
-\usepackage[english,russian]{babel}
+\input{common/encoding}
+\input{common/packages}
 
-\usepackage{caption}
-\usepackage{subcaption}
+\input{common/newcommand}
 
-\graphicspath{{figures}}
-
-\newcommand{\tr}[1]{\mathrm{Tr} \left\{ #1 \right\}}
-\newcommand{\sx}{I_\mathrm{x}}
-\newcommand{\sy}{I_\mathrm{y}}
-\newcommand{\sz}{I_\mathrm{z}}
-\newcommand{\hdz}{H_\mathrm{dz}}
-
-
+\input{common/settings}
 \setbeamertemplate{caption}[numbered] % number figures
-
 \usetheme{Madrid}
-
 \title[Многочастичная запутанность]{Многочастичная запутанность}
 \subtitle{в многоквантовой спектроскопии ЯМР в твердом теле}
 \author[Лазарев И.Д.]{\textbf{И.Д. Лазарев\inst{1,2}}}
-
 \institute[МГУ, ИПХФ РАН]
 {
   \inst{1}%
@@ -35,7 +22,6 @@
   \inst{2}%
   Институт проблем химической физики РАН
 }
-
 \date[2022]{Июнь 2022}
 
 

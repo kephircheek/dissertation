@@ -1,75 +1,27 @@
 \documentclass[14pt]{extreport}
-\usepackage{cmap} % copy from pdf
-\usepackage[T2A]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage[english,russian]{babel}
-\usepackage{
-  amssymb,
-  amsfonts,
-  amsmath,
-  mathtext,
-  cite,
-  enumerate,
-  float,
-  amsthm}
-\usepackage{hyperref} % for url in bibtex
-
-% \renewcommand\qedsymbol{${\mathlarger \blacktriangleright }$}
-% \renewcommand\qedsymbol{\textbf{QED}}
-
-\newtheorem{definition}{Определение}[section]
-\newtheorem{theorem}{Теорема}[section]
-\newcommand{\bra}[1]{\left\langle #1 \right|}
-\newcommand{\ket}[1]{\left| #1 \right\rangle}
-\newcommand{\p}[1]{\left( #1 \right)}
-\newcommand{\abs}[1]{\left| #1 \right|}
-\newcommand{\tr}[1]{\mathrm{Tr} \left\{ #1 \right\}}
-\newcommand{\sx}{I_\mathrm{x}}
-\newcommand{\sy}{I_\mathrm{y}}
-\newcommand{\sz}{I_\mathrm{z}}
-\newcommand{\hdz}{H_\mathrm{dz}}
-
-\usepackage{ragged2e}
-\usepackage{verbatim} % enviroment without latex
-\usepackage{relsize} % {\mathlarger mathform}
-
-% PAPER PARAMETERS
+\input{common/encoding}
+\input{common/packages}
 \usepackage{geometry}
- \geometry{left=25mm}
- \geometry{right=10mm}
- \geometry{top=20mm}
- \geometry{bottom=20mm}
-
-% containers for figure with [ht]
-% \usepackage{float}
-% pic
-\usepackage[pdftex]{graphicx, xcolor}
-% filepath for pic
-\graphicspath{{figures}}
-% for subfigure
-\usepackage{subcaption}
-
-% help
 \usepackage{lineno}
+
+\input{common/newcommand}
+\input{common/newtheorem}
+
+\input{common/settings}
+% page margins
+\geometry{left=25mm}
+\geometry{right=10mm}
+\geometry{top=20mm}
+\geometry{bottom=20mm}
 \linenumbers
-\usepackage{xcolor}
-
-% Многочастичная запутанность в многоквантовой спектроскопии ямр в твердом теле
-
-\title{МНОГОЧАСТИЧНАЯ ЗАПУТАННОСТЬ В МНОГОКВАНТОВОЙ СПЕКТРОСКОПИИ ЯМР В ТВЕРДОМ ТЕЛЕ}
+\title{Многочастичная запутанность в многоквантовой спектроскопии ЯМР в твердом теле}
 \author{Илья Лазарев}
 \date{Последняя редакция: \today}
 
 \begin{document}
 \maketitle
-
 \input{manuscript/title-page}\addtocounter{page}{1}
-
 \tableofcontents
-
-%\raggedright  %отмена переносов
-%\justify %выравнивание по ширине
-
 \input{manuscript/introduction}
 \input{manuscript/literature-review}
 \input{manuscript/fisher-information-mesuarment-in-mq-nmr}
@@ -77,7 +29,5 @@
 \input{manuscript/many-particle-entanglement-in-zigzag-chain}
 \input{manuscript/wigner-yanase-information-mesuarment-in-mq-nmr}
 \input{manuscript/conclusions}
-
 \input{manuscript/bibliography}
-
 \end{document}
