@@ -148,22 +148,8 @@
 но в данной работе они рассмотрены не будут.
 
 \begin{definition}\label{def:manyparticle-entanglement}
-  Чистое состояние $N$ частиц является $k$-частино запутанным, если
-  $$
-  \left| \Psi_{k-\mathrm{ent}} \right\rangle
-  	= \otimes^\mathrm{M}_{i=1} \left| \Psi_{i} \right\rangle,
-  $$
-  где $\left| \Psi_{i} \right\rangle$ - это многокубитное несепарабельное или однокубитное состояние подсистемы с $N_i$ частицами
-  $\left( \sum_{i=1}^N N_i = N \right)$,
-  и существует такое  $ m \in \mathbb{N}$, что $N_{m} \ge k$.
-  Смешанное состояние $\rho_{k-\mathrm{ent}}$ может быть представлено как
-  $$
-  \rho_{k-\mathrm{ent}} =
-  \sum\limits_{l} p_l \ket{\Psi_{k_l-\mathrm{ent}}}\bra{\Psi_{k_l-\mathrm{ent}}},
-  $$
-  где $k_l \geq k$ для любого $l$.
+  \input{common/k-particle-entangled-state-definition}
 \end{definition}
-
 
 Проиллюстрируем классификацию многочастичной запутанности на примере системы из $N = 3$ частиц.
 Состояние
@@ -208,7 +194,7 @@ $\ket{\varphi}_{12} \neq \ket{\varphi}_1 \otimes \ket{\phi}_2$.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{concurence-temp-rcr}
+    \includegraphics[width=0.5\textwidth]{Aldoshin2008-concurence-by-temp}
     \caption{
       Температурные зависимости согласованности (1) и запутанности (2) в     нитрозильном комплексе железа.
       Сплошные кривые 3 и 4 --- теоретические зависимости $C$ и $E$ соответственно.
@@ -322,16 +308,7 @@ $\ket{\varphi}_{12} \neq \ket{\varphi}_1 \otimes \ket{\phi}_2$.
 \end{definition}
 
 \begin{definition}\label{def:rho-k-prod}
-  Матрица плотности $\rho_{k-\mathrm{prod}}$
-  является $k$-частично разделимой,
-  если она может быть факторизована на $l$ подсистем $\{\rho_i\}$ с размерами $\{N_i\}$,
-  где $\rho_i$ --- несепарабельное многокубитное состояние или однокубитное состояние,
-  и выполнено неравенство
-  \begin{equation}
-    N > k \geq N_1 \geq N_2 \geq \dots \geq N_l \geq 1,
-    \quad
-    \sum_{i=0}^{l} N_i = N.
-  \end{equation}
+  \input{common/k-producible-state-definition}
 \end{definition}
 %
 % Из свойств обобщенной меры информации $F$ следует,

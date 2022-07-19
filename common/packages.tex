@@ -1,14 +1,23 @@
-\usepackage{subcaption}
-\usepackage{graphicx, xcolor}
-\usepackage{caption}
-\usepackage{subcaption}
-\usepackage{hyperref} % for url in bibtex
+\usepackage[T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,russian]{babel}
 \usepackage{
+  % cmap, % copy from pdf
+  graphicx,
+  subcaption,
+  xcolor,
+  caption,
+  subcaption,
+  hyperref, % for url in bibtex
+  lineno,
+  geometry,
   amssymb,
   amsfonts,
-  amsmath,
+  amsmath, % for \begin{equation*}
   mathtext,
   cite,
   enumerate,
   float, % for figure with [ht]
-  amsthm}
+  calc, % \widthof{999}
+  amsthm
+}

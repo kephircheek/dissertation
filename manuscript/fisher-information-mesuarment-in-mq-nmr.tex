@@ -18,7 +18,7 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\textwidth]{mq-experiment-schema.pdf}
-  \caption{Схема МК эксперимента ЯМР}
+  \caption{\protect\input{figures/mq-experiment-schema}}
   \label{fig:mq-experiment-schema}
 \end{figure}
 
@@ -26,36 +26,26 @@
 для термодинамически равновесного начального состояния системы $\rho_\mathrm{eq}$,
 которое определяется выражением
 %
-\begin{equation}
-  \label{eq:rho_eq}
-  \rho_{\mathrm{eq}} = \dfrac{e^{\frac{\hbar\omega_{0}}{kT} I_z}}{Z},
+\begin{equation}\label{eq:rho_eq}
+  \rhoEqDefinition \, ,
 \end{equation}
 %
-где $Z =\mathrm{Tr}\left\{e^{\frac{\hbar\omega_{0}}{kT} I_z}\right\}$ 
---- это статистическая сумма,
-$\hbar$ и $k$ -- это постоянная Планка и постоянная Больцмана соответсвенно,
-$\omega_0$ -- Ларморовская частота,
-$T$ -- температура,
-и $I_z$ оператор проекции полного углового момента на ось $z$,
-которая направлена вдоль сильного внешнего магнитного поля.
+\rhoEqExplanatoryNote
 
 Для теоретического исследования МК динамики ЯМР
 необходимо найти эволюционную матрицу плотности $\rho(\tau)$
 на подготовительном периоде МК эксперимента ЯМР (см. раздел~\ref{sec:mq-nrm-experiment}),
 решив уравнение Лиувилля~\cite{Feldman2012}
 %
-\begin{equation}
-    \label{eq:liouvile}
-    i \dfrac{d\rho(\tau)}{d \tau} =
-    \left[H_\mathrm{MQ}, \rho(\tau)\right].
+\begin{equation}\label{eq:liouvile}
+  \liouvilleEquation{\hmq}
 \end{equation}
 %
 с начальной матрицей плотности $\rho(0)$,
 находящейся в термодинамическом равновесии,
 %
-\begin{equation}
-    \label{eq:rho_init}
-    \rho(0) = \rho_{\mathrm{eq}}.
+\begin{equation}\label{eq:rho_init}
+    \rho(0) = \rhoEq.
 \end{equation}
 %
 Так как в рассматриваемом случае гамильтониан~$H_\mathrm{MQ}$
@@ -104,9 +94,9 @@ $T$ -- температура,
 \begin{equation}
   \label{eq:signal-short}
   G(\tau, \phi) = \tr{
-   e^{i\phi I_z} \rho_\mathrm{LT} (\tau)
-   e^{-i\phi I_z} \rho_\mathrm{HT} (\tau).
-  }
+   e^{i\phi I_z} \rhoLT (\tau)
+   e^{-i\phi I_z} \rhoHT (\tau)
+  }.
 \end{equation}
 
 

@@ -1,0 +1,27 @@
+% \documentclass[a5paper,10pt,twoside,openany,article]{memoir}%,draft
+\documentclass[a5paper,12pt,twoside]{article}
+\input{common/packages}
+\usepackage{wrapfig}
+
+\input{common/newcommand}
+\input{common/newtheorem}
+
+\input{common/settings}
+\linenumbers
+\geometry{left=25mm,right=10mm,top=20mm,bottom=20mm}
+\captionsetup{font=footnotesize} % smaller caption
+
+\begin{document}
+\input{synopsis/title}
+\section*{Общая характеристика работы}
+\input{manuscript/introduction}
+\section*{Краткое содержание диссертации}
+\input{synopsis/summary}
+\section*{Заключение}
+\input{manuscript/conclusions}
+\section*{Список публикация по теме диссертации}
+\begin{enumerate}
+  \input{common/publications}
+\end{enumerate}
+\input{manuscript/bibliography}
+\end{document}

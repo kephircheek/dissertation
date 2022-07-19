@@ -3,7 +3,134 @@
 \newcommand{\p}[1]{\left( #1 \right)}
 \newcommand{\abs}[1]{\left| #1 \right|}
 \newcommand{\tr}[1]{\mathrm{Tr} \left\{ #1 \right\}}
-\newcommand{\sx}{I_\mathrm{x}}
-\newcommand{\sy}{I_\mathrm{y}}
-\newcommand{\sz}{I_\mathrm{z}}
+\newcommand{\commutator}[2]{\left[#1, #2\right]}
+
+\newcommand{\soperator}{I}
+\newcommand{\sx}{\soperator_\mathrm{x}}
+\newcommand{\sy}{\soperator_\mathrm{y}}
+\newcommand{\sz}{\soperator_\mathrm{z}}
+\newcommand{\splus}{\soperator^+} % raising
+\newcommand{\sminus}{\soperator^-} % lowering
+\newcommand{\splusminus}{\soperator^\pm}
 \newcommand{\hdz}{H_\mathrm{dz}}
+\newcommand{\hmq}{H_\mathrm{MQ}}
+\newcommand{\qfi}{F_\mathrm{Q}}
+\newcommand{\wyi}{I_\mathrm{WY}}
+
+\newcommand{\rhoEq}{\rho_\mathrm{eq}}
+\newcommand{\rhoEqDefinition}{
+  \dfrac{e^{\beta \sz}}{Z},
+  \quad
+  \beta = \frac{\hbar\omega_{0}}{kT}
+ }
+\newcommand{\rhoEqExplanatoryNote}{
+  где $Z = \tr{e^{\beta \sz}}$
+  --- статистическая сумма,
+  $\hbar$ и $k$ --- постоянная Планка и постоянная Больцмана соответсвенно,
+  $\omega_0$ --- ларморовская частота,
+  $T$ --- температура,
+  и $I_z$ --- оператор проекции полного углового момента на ось $z$,
+  которая направлена вдоль сильного внешнего магнитного поля.
+}
+
+\newcommand{\rhoEqHdz}{\bar\rho_\mathrm{eq}}
+\newcommand{\rhoEqHdzDefinition}{
+  \dfrac{1}{\bar Z}
+    e^{
+      \frac{\hslash \omega_{0}}{k} \alpha_\mathrm{z} \sz
+      + \frac{\hslash }{k} \beta_\mathrm{d} \hdz
+    }
+}
+\newcommand{\rhoEqHdzExplanatoryNote}{
+  где
+  $\bar Z = \tr{ e^{\frac{\hslash \omega_{0}}{k} \alpha_\mathrm{z} \sz + \frac{\hslash }{k} \beta_\mathrm{d} \hdz} }$ --- статистическая сумма,
+  $\hslash$ и $k$ --- константы Планка и Больцмана,
+  $\omega_{0}$ --- частота Лармора,
+  $\sz$ ---  оператор проекции полного углового спинового момента  на ось~$z$,
+  который направлен вдоль сильного внешнего магнитного поля,
+  $\hdz$ --- секулярная часть гамильтониана ДДВ в сильном внешнем магнитном поле
+  и $\alpha_\mathrm{z}$, $\beta_\mathrm{d}$ --- обратные зеемановская и дипольная температуры.
+}
+
+\newcommand{\rhoDo}{\rho_\mathrm{do}}
+\newcommand{\rhoDoDefinition}{
+  \frac{1}{Z_\mathrm{do}} e^\frac{\hslash\beta_\mathrm{d} \hdz}{k}
+}
+\newcommand{\rhoDoDefinitionHT}{
+  \frac{1}{Z_\mathrm{do}}\p{1 + \frac{\hslash\beta_\mathrm{d}}{k} \hdz}
+}
+\newcommand{\rhoDoExplanatoryNote}{
+  где статистическая сумма
+  $Z_\mathrm{do} = \tr{ e^\frac{\hslash\beta_\mathrm{d} \hdz}{k} } \approx 2^{N}$.
+}
+
+\newcommand{\rhoHT}{\rho_\mathrm{HT}}
+\newcommand{\rhoHTDefinition}{
+
+}
+
+\newcommand{\rhoLT}{\rho_\mathrm{LT}}
+\newcommand{\rhoLTDefinition}{
+
+}
+
+\newcommand{\liouvilleEquation}[2][\rho]{
+  i \frac{d #1}{d \tau} = \commutator{#2}{#1(\tau)}
+}
+% $\liouvilleEquation[\rho]{\hmq}$
+% $\liouvilleEquation{\hmq}$
+
+
+\newcommand{\hmqEquivalentSpins}{H_\mathrm{MQ,es}}%^\mathrm{es}}
+\newcommand{\hmqEquivalentSpinsDefinition}{
+   \hmqEquivalentSpins = - \frac{D_\mathrm{es}}{4} \p{
+    \p{\splus}^2 + \p{\sminus}^2
+  },
+  \quad
+  \splusminus = \sum\limits_{j=1}^{N} I^{\pm}_j
+}
+\newcommand{\hmqEquivalentSpinsExplanatoryNote}{
+  где $\splusminus_j$ --- повышающий или понижающий операторы спина $j$,
+  $N$ --- число спинов в нанопоре,
+  $D_\mathrm{es}$ --- константа ДДВ,
+  усредненная по быстрой молекулярной диффузии спин-несущих частиц в нанопоре.
+}
+\newcommand{\hmqEquivaletnSpinsBlockDegeneration}{n(S, N)}
+\newcommand{\hmqEquivaletnSpinsBlockDegenerationDefinition}{
+  n(S, N) = \dfrac{
+    N! (2S+1)
+  }{
+    \p{\frac N 2 + S + 1}!\p{\frac N 2 - S}!
+  }%,
+  %\quad
+  %\frac N 2 - \left[\frac N 2\right] \leq S \leq \frac N 2
+}
+
+\newcommand{\hdzEquivaletnSpins}{H_\mathrm{dz, es}}
+\newcommand{\hdzEquivaletnSpinsDefinition}{
+  \frac{D_\mathrm{es}}{2} (3 \sz^2 - \soperator^2)
+}
+\newcommand{\hdzEquivaletnSpinsExplanatoryNote}{
+  где $\soperator^2$ --- квадрат полного спинового углового момента.
+}
+
+\newcommand{\hmqZChainNextNearest}{H_\mathrm{MQ, zc}}
+\newcommand{\hmqZChainNextNearestDefinition}{
+  \sum_{i=1}^{N-1} D_{i, i+1}(I_i^{+}I_{i+1}^{+}+ I_i^{-}I_{i+1}^{-} )
+  + \sum_{i=1}^{N-2} D_{i, i+2} (I_i^{+}I_{i+2}^{+}+ I_i^{-}I_{i+2}^{-} )
+}
+\newcommand{\hmqZChainNextNearestExplanatoryNote}{
+  где $I_i^+$, $I_i^-$ --- это повышающий и понижающий операторы спинового углового момента спина с номером $i$,
+  $N$ --- это количество ядерных спинов в цепочке.
+}
+
+\newcommand{\totalSpinAnglularMomentumValuesDefinition}{
+  S = \frac N 2,
+    \frac N 2 - 1,
+    \frac N 2 - 2,
+    \dots,
+    \frac N 2 - \left[\frac N 2\right]
+}
+\newcommand{\totalSpinAnglularMomentumValuesExplanatoryNote}{
+  где $[x]$ --- целая часть $x$.
+}

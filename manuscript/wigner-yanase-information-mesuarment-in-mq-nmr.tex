@@ -34,7 +34,7 @@
 \begin{equation}
   \rho(0, \beta)
   = \rho_\mathrm{eq}
-  = \dfrac{e^{\frac{\hbar\omega_{0}}{kT} I_z}}{Z},
+  = \dfrac{e^{\frac{\hbar\omega_{0}}{kT} I_z}}{Z}
   = \dfrac{e^{\beta I_z}}{Z},
 \end{equation}
 где $Z = \tr{e^{\beta I_z}}$ --- статистическая сумма,
@@ -149,45 +149,22 @@ $\rho(\tau,\frac \beta 2)$ можно представить ее в виде р
 этих информаций в контексте исследования многочастичной запутанности.
 Результаты такого сравнения представлены в данном разделе.
 
-% \begin{figure}[H]
-% 	\includegraphics[width=0.95\linewidth]{nanopora_entangled_spins_by_temp}
-% 	\caption{
-% 		Зависимость оценки числа запутанных спинов в системе от обратной температуры $\beta = \frac{\pi \omega_0}{kT}$
-% 		в нанопоре.
-% 		Черные круги --- результаты полученные на основе квантовой информации Фишера.
-% 		Белые круги --- результаты полученные на основе косой информации Вигнера-Янасе.
-% 	}
-% 	\label{fig:2}
-% \end{figure}
-%
-% \begin{figure}[H]
-% 	\includegraphics[width=0.95\linewidth]{zigzag_entangled_spins_by_temp}
-% 	\caption{
-% 		Зависимость оценки числа запутанных спинов  $N_\mathrm{ent}$
-% 		от параметра обратной температуры $\beta = \frac{\pi \omega_0}{kT}$
-% 		в зигзагообразной цепочке, состоящей из шести спинов.
-% 		Черные круги --- результаты полученные на основе квантовой информации Фишера.
-% 		Белые круги --- результаты полученные на основе косой информации Вигнера-Янасе.
-% 	}
-% 	\label{fig:3}
-% \end{figure}
-
 \begin{figure}[H]
   \centering
   \begin{subfigure}[t]{0.49\textwidth}
-    \includegraphics[width=\linewidth]{nanopora_entangled_spins_by_temp}
+    \includegraphics[width=\linewidth]{result-nanopore-eq-nent-by-beta-qfi-wyi}
 	\caption{
 		Нанопора заполненная спин-несущими частицами.
 	}
-	\label{fig:qfi-wyi-comparison-nanopora}
+	\label{fig:result-nanopore-eq-nent-by-beta-qfi-wyi}
   \end{subfigure}
   \hfill
   \begin{subfigure}[t]{0.49\textwidth}
-    \includegraphics[width=\linewidth]{zigzag_entangled_spins_by_temp}
+    \includegraphics[width=\linewidth]{result-zchain-nent-by-beta-qfi-wyi}
 	\caption{
 		Зигзагообразная цепочка, состоящей из шести спинов.
 	}
-	\label{fig:qfi-wyi-comparison-zigzag-chain}
+	\label{fig:result-zchain-nent-by-beta-qfi-wyi}
   \end{subfigure}
   \caption{
     Зависимость оценки снизу числа запутанных спинов  $N_\mathrm{ent}$
@@ -195,7 +172,7 @@ $\rho(\tau,\frac \beta 2)$ можно представить ее в виде р
 	Черные круги --- результаты полученные на основе квантовой информации Фишера.
 	Белые круги --- результаты полученные на основе косой информации Вигнера-Янасе.
   }
-  \label{fig:qfi-wyi-comparison}
+  \label{fig:result-nent-by-beta-qfi-wyi}
 \end{figure}
 
 Величины квантовой информации Фишера~$I_\mathrm{F}(\rho(\tau,\beta),I_z)$ и косой информации Вигнера-Яанасе~$I_{WY}(\rho(\tau,\beta),I_z)$
@@ -217,15 +194,15 @@ $\rho(\tau,\frac \beta 2)$ можно представить ее в виде р
 Неравенство~(\ref{eq:qfi-wyi-inequality}) позволяет надеяться,
 что полученные результаты для оценки числа запутанных спинов не будут значительно отличаться.
 
-На Рис.~\ref{fig:qfi-wyi-comparison} представлены результаты зависимости
+На Рис.~\ref{fig:result-nent-by-beta-qfi-wyi} представлены результаты зависимости
 оценки снизу количества запутанных частиц в системе от обратной температуры $\beta$.
 Оценки количества запутанных частиц были полученных на основе квантовой информации Фишера и косой информации Вигнера-Янасе.
 Величины обеих информаций были вычислены через второй момент распределения МК когерентностей ЯМР~(cм.
 разделы~\ref{sec:reduced-mq-coherences}~и~\ref{sec:wyi-mesuarement}).
-На Рис.~\ref{fig:qfi-wyi-comparison-nanopora} сравнение проведено для модели несферической нанопоры,
+На Рис.~\ref{fig:result-nanopore-eq-nent-by-beta-qfi-wyi} сравнение проведено для модели несферической нанопоры,
 заполненной газом спин-несущих атомов (например, ксеноном) или молекул в сильном внешнем магнитном поле~(см. раздел~\ref{sec:model-equivalent-spins}).
 Расчеты второго момента $M_2(\tau, \beta)$ были сделаны по аналогии с разделом~\ref{sec:nanopora-thermodynamic-equilibrium} для системы из 201 спина.
-На Рис.~\ref{fig:qfi-wyi-comparison-zigzag-chain} сравнение проведено
+На Рис.~\ref{fig:result-zchain-nent-by-beta-qfi-wyi} сравнение проведено
 для модели зигзагообразной цепочки ядерных спинов в кристалле гамбергита~(см. раздел~\ref{sec:model-zigzag-chain}).
 Расчеты второго момента $M_2(\tau, \beta)$ были сделаны по аналогии с главой~\ref{chapter:manayparticle-entantlement-in-zigzag-chain}
 

@@ -454,27 +454,14 @@ $\mathrm{BeO}_3(\mathrm{OH})$ тетраэдров
   \begin{subfigure}[t]{0.55\textwidth}
     \centering
     \includegraphics[width=\textwidth]{sample-nanopore-film.png}
-    \caption{
-      Иллюстрация поперечного сечения тонкой пленки гидрогенизированного аморфного кремния (a-Si:H) с увеличенной областью,
-      показывающей вытянутую нанопору,
-      содержащую газ H$_2$ (синие точки).
-      Угол $\Omega$ --- это угол между внешним магнитным полем (H$_0$) и главной осью нанопоры.
-    }
+    \caption{\protect\input{figures/sample-nanopore-film}}
     \label{fig:sample-nanopore-film}
   \end{subfigure}
   \hfill
   \begin{subfigure}[t]{0.4\textwidth}
     \centering
     \includegraphics[width=\textwidth]{sample-nanopore-nmr-spectrum.png}
-    \caption{
-      Спектры ЯМР протонов при комнатной температуре (сплошные линии)
-      и их линейные подгонки (пунктирные линии)
-      для тонкой пленки a-Si:H,
-      снятые при различных ориентациях пленки относительно приложенного магнитного поля (4,7 тесла).
-      Угол определен на  Рис.~\ref{fig:sample-nanopore-film}.
-      Значение константы связи $D$ зависит как от газа,
-      так и от эффективного давления в нанопоре ($\approx 1$ кБар)
-    }
+    \caption{\protect\input{figures/sample-nanopore-nmr-spectrum}}
     \label{fig:sample-nanopore-nmr-spectrum}
   \end{subfigure}
   % \captionsetup{skip=-0.1mm}
@@ -596,18 +583,19 @@ $\mathrm{BeO}_3(\mathrm{OH})$ тетраэдров
 может быть определен, как сумма размерностей всех блоков:
 %
 \begin{equation}\label{eq:full-dimension}
-  \sum\limits_N n_N(S)(2S+1) = 2^N,
+  \sum\limits_N \hmqEquivaletnSpinsBlockDegeneration (2S+1) = 2^N,
 \end{equation}
 %
-где $n_N(S)$ --- это количество состояний системы из $N$ спинов
+где $\hmqEquivaletnSpinsBlockDegeneration$ --- это количество состояний системы из $N$ спинов
 с фиксированным значением полного углового момента $S$,
 которое может быть вычислено по формуле~\cite{Landau3}:
 %
 \begin{equation}\label{eq:coeff_n}
-  n_N(S)  = \dfrac{ N! (2S+1)}
-  {(\frac N 2 + S + 1)!(\frac N 2 - S)!},
-  \quad
-  0\leq S \leq \frac N 2.
+  \hmqEquivaletnSpinsBlockDegenerationDefinition
+  % n_N(S)  = \dfrac{ N! (2S+1)}
+  % {(\frac N 2 + S + 1)!(\frac N 2 - S)!},
+  % \quad
+  % 0\leq S \leq \frac N 2.
 \end{equation}
 %
 
