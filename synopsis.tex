@@ -1,7 +1,8 @@
 % \documentclass[a5paper,10pt,twoside,openany,article]{memoir}%,draft
-\documentclass[a5paper,12pt,twoside]{article}
+\documentclass[a5paper,10pt,twoside]{article}
 \input{common/packages}
 \usepackage{wrapfig}
+\usepackage{tabularx}
 
 \input{common/newcommand}
 \input{common/newtheorem}
@@ -9,7 +10,7 @@
 \input{common/settings}
 \linenumbers
 \geometry{left=25mm,right=10mm,top=20mm,bottom=20mm}
-\captionsetup{font=footnotesize} % smaller caption
+%\captionsetup{font=footnotesize} % smaller caption
 
 \begin{document}
 \input{synopsis/title}
@@ -19,11 +20,16 @@
 \input{synopsis/summary}
 \section*{Заключение}
 \input{manuscript/conclusions}
-\section*{Список публикация по теме диссертации}
+\section*{Выводы}
+\begin{enumerate}
+  \input{common/conclusions}
+\end{enumerate}
+\section*{Список публикаций по теме диссертации}
 \begin{enumerate}
   \input{common/publications}
 \end{enumerate}
 
-\bibliographystyle{ugost2008}
+% \bibliographystyle{ugost2008}
+\bibliographystyle{unsrt}
 \bibliography{bibliography}
 \end{document}
