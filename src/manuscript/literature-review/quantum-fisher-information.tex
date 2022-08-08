@@ -63,10 +63,10 @@
 продифференцируем выражение под оператором математического ожидания:
 %
 \begin{multline}\label{eq:fi-via-mean-expand}
-  \frac{\partial^2}{\partial \theta^2}\ln f(X,\theta) 
+  \frac{\partial^2}{\partial \theta^2}\ln f(X,\theta)
   = \frac{\partial}{\partial \theta}\p{\frac{1}{f(X,\theta)}
     \frac{\partial f(X,\theta)}{\partial \theta} } \\
-  = \frac{1}{f(X,\theta)}\frac{\partial^2 f(X,\theta)}{\partial \theta^2} 
+  = \frac{1}{f(X,\theta)}\frac{\partial^2 f(X,\theta)}{\partial \theta^2}
   - \p{\frac{1}{f(X,\theta)} \frac{\partial f(X,\theta)}{\partial \theta}}^2.
 \end{multline}
 %
@@ -75,12 +75,12 @@
 %
 \begin{multline}\label{eq:fi-via-mean-proof}
   E\left[\frac{1}{f(X,\theta)}
-    \frac{\partial^2 f(X,\theta)}{\partial \theta^2}\right] 
+    \frac{\partial^2 f(X,\theta)}{\partial \theta^2}\right]
   = \int f (X,\theta) \frac{1}{f(X,\theta)}
     \frac{\partial^2 f(X, \theta)}{\partial \theta^2}dx \\
-  = \int \frac{\partial^2 f(X,\theta)}{\partial \theta^2}dx 
+  = \int \frac{\partial^2 f(X,\theta)}{\partial \theta^2}dx
   = \frac{\partial^2}{\partial \theta^2} \int f(X,\theta)dx
-  = \frac{\partial^2}{\partial \theta^2}1 
+  = \frac{\partial^2}{\partial \theta^2}1
   \equiv 0.
 \end{multline}
 %
@@ -96,8 +96,8 @@
 Исходим из тождества:
 %
 \begin{equation}\label{eq:21}
-  E[\hat{\theta}(X) - \theta] 
-  = \int(\hat{\theta}(x) - \theta)f(x,\theta)d\theta 
+  E[\hat{\theta}(X) - \theta]
+  = \int(\hat{\theta}(x) - \theta)f(x,\theta)d\theta
   = \int\theta(x)f(x,\theta)dx - \int f(x,\theta)dx \equiv 0.
 \end{equation}
 %
@@ -172,7 +172,7 @@
 где $\rho_\theta$ --- это матрица плотности системы, зависящая от параметра $\theta$, а симметричный оператор логарифмической производной $L_\theta$ определяется из уравнения:
 %
 \begin{equation}\label{eq:qfi-log-derivative}
-  \frac{\partial\rho_\theta}{\partial\theta} 
+  \frac{\partial\rho_\theta}{\partial\theta}
   = \frac{1}{2} \p{L_\theta \rho_\theta + \rho_\theta L_\theta}.
 \end{equation}
 %
@@ -192,8 +192,8 @@
 В этом случае:
 %
 \begin{equation}\label{eq:derivative-rho-by-theta}
-  \frac{\partial\rho_\theta}{\partial\theta} 
-  = iH\rho_\theta - i\rho_\theta H 
+  \frac{\partial\rho_\theta}{\partial\theta}
+  = iH\rho_\theta - i\rho_\theta H
   = i \left[H,\rho_\theta \right].
 \end{equation}
 %
@@ -202,12 +202,12 @@ $\rho =\sum\limits_{k} \lambda_k \ket{k}\bra{k}$.
 Используя уравнения ~(\ref{eq:qfi-log-derivative})~и~(\ref{eq:derivative-rho-by-theta}), получаем
 %
 \begin{multline}%\label{eq:7}
-  i \left[H,\rho_\theta \right]_{jk} 
+  i \left[H,\rho_\theta \right]_{jk}
   = \frac{1}{2} \sum_e \p{L_\theta }_{je}
     \p{\rho_\theta }_{ek} +
     \frac{1}{2} \sum_e \p{\rho_\theta }_{je}
     p{L_\theta }_{ek} \\
-  = \frac{1}{2}\p{L_\theta }_{jk} \lambda_k 
+  = \frac{1}{2}\p{L_\theta }_{jk} \lambda_k
   + \frac{1}{2}\lambda_j \p{L_\theta }_{jk}
   = \frac{1}{2} \p{\lambda_k + \lambda_j }
     \p{L_\theta }_{ik}.
@@ -235,19 +235,19 @@ $\rho =\sum\limits_{k} \lambda_k \ket{k}\bra{k}$.
 Далее
 %
 \begin{equation}%\label{eq:10}
-  \left[H, \rho_\theta \right]_{jk} 
+  \left[H, \rho_\theta \right]_{jk}
   = \sum_e H_{je} \p{\rho_\theta }_{ek}
-  - \sum_e \p{\rho_\theta }_{je}H_{ek} 
-  = H_{jk}\lambda_k - H_{jk}\lambda_j 
+  - \sum_e \p{\rho_\theta }_{je}H_{ek}
+  = H_{jk}\lambda_k - H_{jk}\lambda_j
   = \p{\lambda_k - \lambda_j } H_{jk}.
 \end{equation}
 %
 Теперь
 %
 \begin{equation}%\label{eq:11}
-  F_Q \p{\rho_\theta, H } 
+  F_Q \p{\rho_\theta, H }
   = \sum_{j,k}\frac{2i\left[H,\rho_\theta \right]_{jk}}{\lambda_k + \lambda_j}
-    i \left[H, \rho_\theta \right]_{kj} 
+    i \left[H, \rho_\theta \right]_{kj}
   = 2\sum_{j,k} \frac{\p{\lambda_j - \lambda_k }^2}{\lambda_j + \lambda_k}
     \abs{\bra{j} H \ket{k}}^2.
 \end{equation}
