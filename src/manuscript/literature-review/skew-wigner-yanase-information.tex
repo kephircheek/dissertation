@@ -39,31 +39,31 @@
 содержащейся в векторе квантового состояния, лежащего под углом по отношению к наблюдаемой $A$
 %
 \begin{equation}\label{eq:wyi}
-  I_{WY}(\rho, A)
-  = -\frac{1}{2} Tr([\sqrt{\rho}, A])^2
-  = Tr(\rho A^2) - Tr(\sqrt \rho A \sqrt \rho  A ).
+  \wyi(\rho, a)
+  = -\frac{1}{2} \tr{[\sqrt{\rho}, a]}^2
+  = \tr{\rho A^2} - \tr{\sqrt \rho A \sqrt \rho  A}.
 \end{equation}
 %
 В частности, если $\rho = \ket{\psi}\bra{\psi}$ --- чистое состояние, тогда
 %
 \begin{equation}\label{eq:wyi-pure}
-  I_{WY}(| \psi \rangle, A)
+  \wyi(| \psi \rangle, A)
   = \langle \psi | A^2 | \psi \rangle - \langle \psi | A| \psi \rangle ^2.
 \end{equation}
 Косая информация удовлетворяет условию выпуклости.
 При объединении двух различных ансамблей информация о перекосе уменьшается, то есть
 %
 \begin{equation}\label{eq:wyi-convex}
-  I_{WY}\p{\alpha \rho_1 + \beta \rho_2, A}
-  \leq \alpha I_{WY}(\rho_1) + \beta I_{WY}(\rho_2),
+  \wyi\p{\alpha \rho_1 + \beta \rho_2, A}
+  \leq \alpha \wyi(\rho_1) + \beta \wyi(\rho_2),
 \end{equation}
 где $\alpha + \beta = 1$ и $\alpha, \beta \geq 0$.
 %
 Косая информация удовлетворяет условию аддитивности
 %
 \begin{equation}\label{eq:wyi-additivity}
- I_{WY}(\rho_1 \otimes \rho_2, A_1 \otimes 1 + 1 \otimes A_2)
- = I_{WY}(\rho_1, A_1) + I_{WY}(\rho_2, A_2),
+ \wyi(\rho_1 \otimes \rho_2, A_1 \otimes 1 + 1 \otimes A_2)
+ = \wyi(\rho_1, A_1) + \wyi(\rho_2, A_2),
 \end{equation}
 %
 где $\rho_1$, $\rho_2$ матрицы плотности подсистем,
@@ -93,7 +93,7 @@
 %
 \begin{equation}\label{eq:wyi-modification-l}
   L(\rho, A)
-  = -\frac{1}{2} Tr([\rho, A])^2.
+  = -\frac{1}{2} \tr{\commutator{\rho}{A}}^2.
 \end{equation}
 %
 Значительным преимуществом величины $L(\rho, A)$ в сравнении с косой информацией является возможность ее измерения экспериментально~\cite{Girolami2014}.
@@ -119,7 +119,7 @@
 Оценка сверху величины косой информации может быть получена из выражения~(\ref{eq:wyi-pure})
 %
 \begin{equation}\label{eq:wyi-upper-bound}
-  I_{WY}(\ket{\psi}, A)
+  \wyi(\ket{\psi}, A)
   \leq  \bra{\psi} A^2 \ket{\psi}
   = \sum\limits_{i, j} \bra{\psi} A_i A_j \ket{\psi}
   \leq N^2,

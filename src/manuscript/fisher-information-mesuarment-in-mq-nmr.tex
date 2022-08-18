@@ -8,7 +8,7 @@
 В разделе~\ref{sec:quantum-fisher-information-mesuarement-at-high-temperature}
 обсуждалась связь между вторым моментом распределения интенсивностей МК когерентностей ЯМР и квантовой информацией Фишера~\cite{Toth2014,Pezze2018}.
 В частности, было показано,
-что в классическом эксперименте ЯМР, когда сигнал усредняется по наблюдаемой $I_z$, в области высоких температур второй момент МК спектра соответствует нижней границе квантовой информации Фишера~\cite{Garttner2018}.
+что в классическом эксперименте ЯМР, когда сигнал усредняется по наблюдаемой $\sz$, в области высоких температур второй момент МК спектра соответствует нижней границе квантовой информации Фишера~\cite{Garttner2018}.
 Ниже будет показано, что МК эксперимент ЯМР может быть проведен таким образом,
 что связь квантовой информации Фишера со второым моментом сохранится для произвольных температур.
 
@@ -23,7 +23,7 @@
 \end{figure}
 
 В первую очередь рассмотрим теорию МК динамики ЯМР (см. раздел~\ref{sec:mq-nrm-experiment})
-для термодинамически равновесного начального состояния системы $\rho_\mathrm{eq}$,
+для термодинамически равновесного начального состояния системы $\rhoEq$,
 которое определяется выражением
 %
 \begin{equation}\label{eq:rho_eq}
@@ -48,104 +48,102 @@
     \rho(0) = \rhoEq.
 \end{equation}
 %
-Так как в рассматриваемом случае гамильтониан~$H_\mathrm{MQ}$
+Так как в рассматриваемом случае гамильтониан~$\hmq$
 не зависит от времени,
 эволюционная матрица плотности может быть выражена как
-\begin{equation}
-  \label{eq:rho_eval_lt}
-  \rho_\mathrm{LT} (\tau) = e^{-iH_\mathrm{MQ}\tau} \rho_\mathrm{eq} e^{iH_\mathrm{MQ}\tau}.
+\begin{equation}\label{eq:rho_eval_lt}
+  \rhoLT (\tau) = e^{-i\hmq\tau} \rhoEq e^{i\hmq\tau}.
 \end{equation}
 В области высоких температур,
-когда $b = \frac{\hbar\omega_{0}}{kT} \ll 1$,
-начальную матрицу плотности $\rho_{\mathrm{eq}}$ можно разложить в ряд по $b$:
+когда $\beta = \frac{\hbar\omega_{0}}{kT} \ll 1$,
+начальную матрицу плотности $\rho_{\mathrm{eq}}$ можно разложить в ряд по $\beta$:
 %
 \begin{equation}
   \label{eq:rho_ht}
-  \rho_{\mathrm{eq}} \approx \dfrac{1}{2^N} (1 + bI_z).
+  \rho_{\mathrm{eq}} \approx \dfrac{1}{2^N} (1 + \beta\sz).
 \end{equation}
 %
 В этом случае эволюционную матрицу плотности можно переписать, как
 \begin{equation}\label{eq:rho_eval_ht}
-  \rho_\mathrm{HT} (\tau) =  e^{-iH_\mathrm{MQ}\tau} I_z e^{iH_\mathrm{MQ}\tau},
+  \rhoHT (\tau) =  e^{-i\hmq\tau} \sz e^{i\hmq\tau},
 \end{equation}
 
 Экспериментальное исследование МК динамики ЯМР заключается в проведении
 МК эксперимента ЯМР (см. раздел~\ref{sec:mq-nrm-experiment})
 и последующем измерении интенсивностей МК когерентностей ЯМР.
 В результате проведения всех периодов МК эксперимента ЯМР (Рис.~\ref{fig:mq-experiment-schema})
-итоговый сигнал $G(\tau, \phi)$ хранится в информации о населенности\cite{Feldman1997}.
+итоговый сигнал $G(\tau, \phi)$ хранится в информации о населенностях энергетических уровней\cite{Feldman1997}.
 Выражение для сигнала $G(\tau, \phi)$ имеет вид
 %
 \begin{equation}
   \label{eq:signal}
    G(\tau, \phi)
    = \tr{
-     e^{iH_\mathrm{MQ}\tau} e^{i\phi I_z} e^{-iH_\mathrm{MQ}\tau}
-     \rho_\mathrm{eq}
-     e^{iH_\mathrm{MQ}\tau} e^{-i\phi I_z} e^{-iH_\mathrm{MQ}\tau}
-     I_z
+     e^{i\hmq\tau} e^{i\phi \sz} e^{-i\hmq\tau}
+     \rhoEq
+     e^{i\hmq\tau} e^{-i\phi \sz} e^{-i\hmq\tau}
+     \sz
     }.
 \end{equation}
 %
 Перегруппировкой множителей,
 выражение~(\ref{eq:signal}) может быть переписано через
- $\rho_\mathrm{LT} (\tau)$ и $\rho_\mathrm{HT} (\tau)$:
+ $\rhoLT(\tau)$ и $\rhoHT(\tau)$:
 %
 \begin{equation}
   \label{eq:signal-short}
   G(\tau, \phi) = \tr{
-   e^{i\phi I_z} \rhoLT (\tau)
-   e^{-i\phi I_z} \rhoHT (\tau)
+   e^{i\phi \sz} \rhoLT (\tau)
+   e^{-i\phi \sz} \rhoHT (\tau)
   }.
 \end{equation}
 
 
 Для получения выражений сигналов отдельных когерентностей,
 перейдем к представлению матриц плотности
-$\rho_\mathrm{LT} (\tau)$ и $\rho_\mathrm{HT} (\tau)$
+$\rhoLT (\tau)$ и $\rhoHT (\tau)$
 в виде ряда
 %
 \begin{equation}\label{eq:rho_series}
-  \rho_\mathrm{LT} (\tau) = \sum_n \rho_{LT, n}(\tau); \quad
-  \rho_\mathrm{HT} (\tau) = \sum_n \rho_{HT, n}(\tau),
+  \rhoLT (\tau) = \sum_n \rho_{LT, n}(\tau); \quad
+  \rhoHT (\tau) = \sum_n \rho_{HT, n}(\tau),
 \end{equation}
 %
 где $\rho_{LT, n} (\tau)$ и  $\rho_{HT, n} (\tau)$
 это вклад МК когерентности $n$-ого порядка
-в матрицы плотности $\rho_\mathrm{LT} (\tau)$ и $\rho_\mathrm{HT} (\tau)$ соответственно.
-Подставляя~(\ref{eq:rho_series}) в~(\ref{eq:signal}) итоговый сигнал $G(\tau, \phi)$ МК когерентностей ЯМР можно переписать в виде
+в матрицы плотности $\rhoLT (\tau)$ и $\rhoHT (\tau)$ соответственно.
+Подставляя~(\ref{eq:rho_series}) в~(\ref{eq:signal}), итоговый сигнал $G(\tau, \phi)$ МК когерентностей ЯМР можно переписать в виде
 %
 \begin{equation}
     \label{eq:signal_series}
     G(\tau, \phi) = \sum\limits_n
-    e^{in\phi}\mathrm{Tr} \left\{
+    e^{in\phi}\tr{
     \rho_{LT, n}(\tau) \rho_{HT, -n} (\tau)
-    \right\},
+    },
 \end{equation}
 %
 где учтены коммутационные соотношения
 %
 \begin{equation}
-    \left[I_z, \rho_{LT, n} (\tau) \right] = n  \rho_{LT, n} (\tau);
+    \left[\sz, \rho_{LT, n} (\tau) \right] = n  \rho_{LT, n} (\tau);
     \quad
-    \left[I_z, \rho_{HT, n} (\tau) \right] = n  \rho_{HT, n} (\tau).
+    \left[\sz, \rho_{HT, n} (\tau) \right] = n  \rho_{HT, n} (\tau).
 \end{equation}
 
 Нормированные интенсивности МК когерентностей ЯМР могут быть выражены следующим образом
 %
-\begin{equation}
-    \label{eq:coherence}
+\begin{equation}\label{eq:coherence}
     J_n(\tau)
     = \dfrac{
-       \mathrm{Tr} \left\{
+       \tr{
         \rho_{LT, n}(\tau) \rho_{HT, -n} (\tau)
-        \right\}
-    }{Tr \left\{\rho_{\mathrm{eq}}I_z\right\}}.
+        }
+    }{\tr{\rho_{\mathrm{eq}}\sz}}.
     = \dfrac{
-       \mathrm{Tr} \left\{
+       \tr{
         \rho_{LT, n}(\tau) \rho_{HT, -n} (\tau)
-        \right\}
-    }{\frac N 2 \tanh \frac b 2}.
+        }
+    }{\frac N 2 \tanh \frac \beta 2}.
 \end{equation}
 
 МК когерентности ЯМР имеют несколько свойств.
@@ -155,37 +153,36 @@ $\rho_\mathrm{LT} (\tau)$ и $\rho_\mathrm{HT} (\tau)$
 Во-вторых, сумма всех нормированных когерентностей равна единице.
 Докажем это утверждение.
 Используя выражения~(\ref{eq:rho_eq}) и~(\ref{eq:rho_eval_ht})
-выразим $\rho_\mathrm{LT}(\tau)$ через $\rho_\mathrm{HT}(\tau)$.
+выразим $\rhoLT(\tau)$ через $\rhoHT(\tau)$.
 %
 \begin{equation}\label{eq:lt-through-ht}
-  \rho_\mathrm{LT}(\tau) = \dfrac 1 Z
-  \exp\left(be^{-iH_\mathrm{MQ}\tau} I_z e^{iH_\mathrm{MQ}\tau}\right) =
-  \dfrac 1 Z e^{b\rho_\mathrm{HT}(\tau)}.
+  \rhoLT(\tau) = \dfrac 1 Z
+  \exp\left(be^{-i\hmq\tau} \sz e^{i\hmq\tau}\right) =
+  \dfrac 1 Z e^{\beta\rhoHT(\tau)}.
 \end{equation}
 %
 Подставляя выражение~(\ref{eq:lt-through-ht}) в~(\ref{eq:coherence}) получаем
 %
-\begin{multline}
-  \label{eq:sum_of_coherence}
+\begin{multline}\label{eq:sum_of_coherence}
   \sum\limits_n J_n(\tau) =
-  \dfrac{\sum\limits_{n, m}\mathrm{Tr}\left\{
+  \dfrac{\sum\limits_{n, m}\tr{
       \rho_{LT, n}(\tau)\rho_{HT, m}(\tau)
-  \right\}}
-  {\mathrm{Tr}\left\{\rho_\mathrm{eq} I_z\right\}} = \\
-  \dfrac{\mathrm{Tr}\left\{
-      \rho_\mathrm{LT}(\tau)\rho_\mathrm{HT}(\tau)
-  \right\}}
-  {\mathrm{Tr}\left\{\rho_\mathrm{eq} I_z\right\}} =
-  \dfrac{\mathrm{Tr}\left\{
-      \rho_\mathrm{HT}(\tau)e^{b\rho_\mathrm{HT}(\tau)}
-  \right\}}
-  {Z\mathrm{Tr}\left\{\rho_\mathrm{eq} I_z\right\}} = \\
-  \dfrac{\frac{d}{db} \ln \mathrm{Tr}\left\{
-      e^{b I_z}
-  \right\}}
-  {\mathrm{Tr}\left\{\rho_\mathrm{eq} I_z\right\}} =
-  \dfrac{\frac 1 2 N \tanh \left( \frac b 2 \right)}
-  {\frac 1 2 N \tanh \left( \frac b 2 \right)} = 1.
+  }}
+  {\tr{\rhoEq \sz}} = \\
+  \dfrac{\tr{
+      \rhoLT(\tau)\rhoHT(\tau)
+  }}
+  {\tr{\rhoEq \sz}} =
+  \dfrac{\tr{
+      \rhoHT(\tau)e^{\beta\rhoHT(\tau)}
+  }}
+  {Z\tr{\rhoEq \sz}} = \\
+  \dfrac{\frac{d}{db} \ln \tr{
+      e^{\beta \sz}
+  }}
+  {\tr{\rhoEq \sz}} =
+  \dfrac{\frac 1 2 N \tanh \left( \frac \beta 2 \right)}
+  {\frac 1 2 N \tanh \left( \frac \beta 2 \right)} = 1.
 \end{multline}
 Ур.~(\ref{eq:sum_of_coherence}) подтверждает,
 что сумма МК когерентностей ЯМР сохраняется на подготовительном периоде МК эксперимента ЯМР.
@@ -197,20 +194,19 @@ $\rho_\mathrm{LT} (\tau)$ и $\rho_\mathrm{HT} (\tau)$
 В предыдущем разделе было получено выражение~(\ref{eq:signal-short}) коррелятора сигнала $G(\tau, \phi)$,
 которое в области высоких температур имеет вид
 %
-\begin{equation}
-    \label{eq:otoc-ht}
-    G_\mathrm{HT}(\tau, \phi) = \frac b Z\mathrm{Tr}\left\{
-    e^{i \phi I_z}
-    \rho_\mathrm{HT} (\tau)
-    e^{-i \phi I_z}
-    \rho_\mathrm{HT}(\tau)
-    \right\},
+\begin{equation}\label{eq:otoc-ht}
+    G_\mathrm{HT}(\tau, \phi) = \frac \beta Z\tr{
+    e^{i \phi \sz}
+    \rhoHT (\tau)
+    e^{-i \phi \sz}
+    \rhoHT(\tau)
+    },
 \end{equation}
 %
 так как согласно разложению~(\ref{eq:rho_ht})
 %
 \begin{equation}
-  \rho_\mathrm{LT} (\tau) \approx \frac 1 Z + \frac b Z \rho_\mathrm{HT}.
+  \rhoLT (\tau) \approx \frac{1}{2^N}\p{1 + \beta \rhoHT (\tau)}.
 \end{equation}
 %
 Так же в разделе~\ref{sec:quantum-fisher-information-mesuarement-at-high-temperature} отмечено,
@@ -218,49 +214,49 @@ $\rho_\mathrm{LT} (\tau)$ и $\rho_\mathrm{HT} (\tau)$
 обеспечивается благодаря особому виду коррелятора сигнала.
 % Коррелятор должен принадлежать классу неупорядоченных по времени корреляторов ``out-of-time-ordered correlator'' (OTOC).
 Выражение~(\ref{eq:otoc-ht}) для $G_\mathrm{HT}(\tau, \phi)$
-в высоко температурной области
+в высокотемпературной области
 удовлетворяет этому требованию,
 в отличие от выражения~(\ref{eq:signal-short}) для $G(\tau, \phi)$.
 $G(\tau, \phi)$ не является неупорядоченным по времени коррелятором,
-так как выражение~(\ref{eq:signal}) содержит разные матрицы $\rho_\mathrm{LT}(\tau)$ и $\rho_\mathrm{HT}(\tau)$.
+так как выражение~(\ref{eq:signal}) содержит разные матрицы $\rhoLT(\tau)$ и $\rhoHT(\tau)$.
 Однако можно обобщить МК эксперимент ЯМР  таким образом,
 чтобы привести сигнал $G(\tau, \phi)$ к нужному виду.
 Для достижения такого поведения коррелятора финального сигнала МК эксперимента ЯМР
 необходимо усреднить сигнал,
 полученный после трех периодов %МК эксперимента ЯМР
 (Рис.~\ref{fig:mq-experiment-schema}),
-по начальному состоянию $\rho_\mathrm{eq}$.
+по начальному состоянию $\rhoEq$.
 Тогда коррелятор сигнала будет описываться следующим выражением
 %
 \begin{multline}
   \label{eq:otoc_LT}
   G_\mathrm{LT}(\tau, \phi) =
-  \mathrm{Tr}\left\{
+  \tr{
     e^{i H_{\mathrm{MQ}} \tau}
-    e^{i \phi I_z}
+    e^{i \phi \sz}
     e^{-i H_{\mathrm{MQ}} \tau}
     \rho_{\mathrm{eq}}
     e^{i H_{\mathrm{MQ}}}
-    e^{-i \phi I_z}
+    e^{-i \phi \sz}
     e^{-i H_{\mathrm{MQ}} \tau}
     \rho_{\mathrm{eq}}
-  \right\} \\ =
-  \mathrm{Tr}\left\{
-    e^{i \phi I_z}
-    e^{-i H_\mathrm{MQ} \tau}
-    \rho_\mathrm{eq}
-    e^{i H_\mathrm{MQ} \tau}
-    e^{-i \phi I_z}
-    e^{-i H_\mathrm{MQ} \tau}
+  } \\ =
+  \tr{
+    e^{i \phi \sz}
+    e^{-i \hmq \tau}
+    \rhoEq
+    e^{i \hmq \tau}
+    e^{-i \phi \sz}
+    e^{-i \hmq \tau}
     \rho_{\mathrm{eq}}
-    e^{i H_\mathrm{MQ} \tau}
-  \right\} \\ =
-  \mathrm{Tr}\left\{
-    e^{i \phi I_z}
-    \rho_\mathrm{LT} (\tau)
-    e^{-i \phi I_z}
-    \rho_\mathrm{LT} (\tau)
-  \right\}.
+    e^{i \hmq \tau}
+  } \\ =
+  \tr{
+    e^{i \phi \sz}
+    \rhoLT (\tau)
+    e^{-i \phi \sz}
+    \rhoLT (\tau)
+  }.
 \end{multline}
 %
 Из выражения~(\ref{eq:otoc_LT}) следует,
@@ -279,18 +275,18 @@ $G(\tau, \phi)$ не является неупорядоченным по вре
 %
 \begin{equation}\label{eq:reduced-mq-coherences}
     J_{\mathrm{LT}, n}(\tau) =
-    \frac{\mathrm{Tr} \left\{
+    \frac{\tr{
         \rho_{\mathrm{LT},n}(\tau)
         \rho_{\mathrm{LT}, -n}(\tau)
-    \right\}}
-    {\mathrm{Tr}\left\{\rho^2_\mathrm{eq}\right\}}.
+    }}
+    {\tr{\rho^2_\mathrm{eq}}}.
 \end{equation}
 %
 В этом случае нормировочный член определяется как
 %
 \begin{equation}\label{eq:j_lt_norm}
-  \mathrm{Tr}\left\{\rho^2_\mathrm{eq}\right\} =
-    \frac{2^N \cosh^N(b)}{Z^2}.
+  \tr{\rho^2_\mathrm{eq}} =
+    \frac{2^N \cosh^N(\beta)}{Z^2}.
 \end{equation}
 Когерентности определяемые выражением~(\ref{eq:reduced-mq-coherences})
 являются приведенными МК когерентностями ЯМР.
@@ -318,15 +314,15 @@ $G(\tau, \phi)$ не является неупорядоченным по вре
   }
   \\
   = \dfrac{
-    \tr{\rho_\mathrm{LT}^2(\tau)}
+    \tr{\rhoLT^2(\tau)}
   }{
     \tr{\rho^2_\mathrm{eq}(\tau)}
   }
   = \dfrac{
     \tr{
-      e^{-i H_\mathrm{MQ} \tau}
+      e^{-i \hmq \tau}
       \rho^{2}_\mathrm{eq}
-      e^{i H_\mathrm{MQ} \tau}
+      e^{i \hmq \tau}
     }
   }{
     \tr{ \rho^2_\mathrm{eq}}

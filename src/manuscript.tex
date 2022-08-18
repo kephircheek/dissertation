@@ -1,16 +1,17 @@
 \documentclass[14pt]{extreport}
 \input{common/packages}
+\usepackage{wrapfig}
 \input{common/newcommand}
 \input{common/newtheorem}
 \input{common/settings}
 \geometry{left=25mm,right=10mm,top=20mm,bottom=20mm} % margins
-\linenumbers
+%\linenumbers
 \title{Многочастичная запутанность в многоквантовой спектроскопии ЯМР в твердом теле}
 \author{Илья Лазарев}
 \date{Последняя редакция: \today}
 
 \begin{document}
-\maketitle
+%\maketitle
 \input{manuscript/title-page}\addtocounter{page}{1}
 \tableofcontents
 \chapter*{Введение}
@@ -21,9 +22,13 @@
 \input{manuscript/many-particle-entanglement-in-nanopore}
 \input{manuscript/many-particle-entanglement-in-zigzag-chain}
 \input{manuscript/wigner-yanase-information-mesuarment-in-mq-nmr}
-\chapter*{Заключение}
-\addcontentsline{toc}{chapter}{Заключение}
+\chapter*{Заключение и основные выводы}
+\addcontentsline{toc}{chapter}{Заключение и основные выводы}
 \input{common/conclusion}
+\section*{Выводы}
+\begin{enumerate}
+  \input{common/conclusions}
+\end{enumerate}
 \chapter*{Благодарности}
 \input{common/acknowledgments}
 
