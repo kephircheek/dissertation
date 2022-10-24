@@ -107,29 +107,29 @@ $\rhoLT (\tau)$ и $\rhoHT (\tau)$
 в виде ряда
 %
 \begin{equation}\label{eq:rho_series}
-  \rhoLT (\tau) = \sum_n \rho_{LT, n}(\tau); \quad
-  \rhoHT (\tau) = \sum_n \rho_{HT, n}(\tau),
+  \rhoLT (\tau) = \sum_n \rhoLT^{(n)}(\tau); \quad
+  \rhoHT (\tau) = \sum_n \rhoHT^{(n)}(\tau),
 \end{equation}
 %
-где $\rho_{LT, n} (\tau)$ и  $\rho_{HT, n} (\tau)$
+где $\rhoLT^{(n)} (\tau)$ и  $\rhoHT^{(n)} (\tau)$
 это вклад МК когерентности $n$-ого порядка
 в матрицы плотности $\rhoLT (\tau)$ и $\rhoHT (\tau)$ соответственно.
-Подставляя~(\ref{eq:rho_series}) в~(\ref{eq:signal}), итоговый сигнал $G(\tau, \phi)$ МК когерентностей ЯМР можно переписать в виде
+Подставляя~(\ref{eq:rho_series}) в~(\ref{eq:signal-short}), итоговый сигнал $G(\tau, \phi)$ МК когерентностей ЯМР можно переписать в виде
 %
 \begin{equation}
     \label{eq:signal_series}
     G(\tau, \phi) = \sum\limits_n
     e^{in\phi}\tr{
-    \rho_{LT, n}(\tau) \rho_{HT, -n} (\tau)
+    \rhoLT^{(n)}(\tau) \rhoHT^{(-n)} (\tau)
     },
 \end{equation}
 %
 где учтены коммутационные соотношения
 %
 \begin{equation}
-    \left[\sz, \rho_{LT, n} (\tau) \right] = n  \rho_{LT, n} (\tau);
+    \left[\sz, \rhoLT^{(n)} (\tau) \right] = n  \rhoLT^{(n)} (\tau);
     \quad
-    \left[\sz, \rho_{HT, n} (\tau) \right] = n  \rho_{HT, n} (\tau).
+    \left[\sz, \rhoHT^{(n)} (\tau) \right] = n  \rhoHT^{(n)} (\tau).
 \end{equation}
 
 Нормированные интенсивности МК когерентностей ЯМР могут быть выражены следующим образом
@@ -138,12 +138,12 @@ $\rhoLT (\tau)$ и $\rhoHT (\tau)$
     J_n(\tau)
     = \dfrac{
        \tr{
-        \rho_{LT, n}(\tau) \rho_{HT, -n} (\tau)
+        \rhoLT^{(n)}(\tau) \rhoHT^{(-n)} (\tau)
         }
     }{\tr{\rho_{\mathrm{eq}}\sz}}.
     = \dfrac{
        \tr{
-        \rho_{LT, n}(\tau) \rho_{HT, -n} (\tau)
+        \rhoLT^{(n)}(\tau) \rhoHT^{(-n)} (\tau)
         }
     }{\frac N 2 \tanh \frac \beta 2}.
 \end{equation}
@@ -168,7 +168,7 @@ $\rhoLT (\tau)$ и $\rhoHT (\tau)$
 \begin{multline}\label{eq:sum_of_coherence}
   \sum\limits_n J_n(\tau) =
   \dfrac{\sum\limits_{n, m}\tr{
-      \rho_{LT, n}(\tau)\rho_{HT, m}(\tau)
+      \rhoLT^{(n)}(\tau)\rhoHT^{(m)}(\tau)
   }}
   {\tr{\rhoEq \sz}} = \\
   \dfrac{\tr{
@@ -278,8 +278,8 @@ $G(\tau, \phi)$ не является неупорядоченным по вре
 \begin{equation}\label{eq:reduced-mq-coherences}
     J_{\mathrm{LT}, n}(\tau) =
     \frac{\tr{
-        \rho_{\mathrm{LT},n}(\tau)
-        \rho_{\mathrm{LT}, -n}(\tau)
+        \rhoLT^{(n)}(\tau)
+        \rhoLT^{(-n)}(\tau)
     }}
     {\tr{\rho^2_\mathrm{eq}}}.
 \end{equation}
@@ -301,16 +301,16 @@ $G(\tau, \phi)$ не является неупорядоченным по вре
   = \dfrac{
     \tr{
       \sum\limits_{n}
-      \rho_{\mathrm{LT}, n}(\tau)
-      \rho_{\mathrm{LT},-n}(\tau)}
+      \rhoLT^{(n)}(\tau)
+      \rhoLT^{(-n)}(\tau)}
     }{
     \tr{\rho^2_\mathrm{eq} }
   }
   = \dfrac{
     \tr{
       \sum\limits_{m,n}
-      \rho_{\mathrm{LT}, n}(\tau)
-      \rho_{\mathrm{LT}, m}(\tau)
+      \rhoLT^{(n)}(\tau)
+      \rhoLT^{(m)}(\tau)
     }}{
     \tr{\rho^2_\mathrm{eq}}
   }
